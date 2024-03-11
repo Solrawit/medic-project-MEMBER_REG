@@ -19,9 +19,9 @@ session_start();
     }
 
     .jumbotron {
-      background-color: #59A7E5; /* index ic */ 33333333333333333
-      color: #ffffff; /* สีตัวอักษรของ jumbotron */ 44444444444444
-      padding: 2rem; /* เพิ่ม padding ใน jumbotron */ 555555
+      background-color: #59A7E5; /* index ic */
+      color: #ffffff; /* สีตัวอักษรของ jumbotron */
+      padding: 2rem; /* เพิ่ม padding ใน jumbotron */
       margin-top: 2rem; /* เพิ่ม margin-top ใน jumbotron */
     }
 
@@ -92,6 +92,10 @@ session_start();
       </div>
     </div>
   </div>
+
+  <!-- Test Github 11/3/24 -->
+  <div>echo "Test 1234 1234 "</div>
+  
   <?php include 'includes/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
