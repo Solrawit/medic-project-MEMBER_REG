@@ -19,8 +19,8 @@ session_start();
     }
 
     .jumbotron {
-      background-color: #59A7E5; /* index ic */
-      color: #ffffff; /* สีตัวอักษรของ jumbotron */
+      background-color: #59A7E5; /* index ic */ ssssss
+      color: #ffffff; /* สีตัวอักษรของ jumbotron */ssss
       padding: 2rem; /* เพิ่ม padding ใน jumbotron */
       margin-top: 2rem; /* เพิ่ม margin-top ใน jumbotron */
     }
