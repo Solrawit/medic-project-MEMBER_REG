@@ -66,8 +66,8 @@ if (isset($_POST["submit"])) {
                 <label>รหัสผ่าน</label>
                 <input type="password" class="form-control" name="user_password" placeholder="Enter Password" required=""/>
               </div>
-              <button type="submit" class="btn btn-success" name="submit">เข้าสู่ระบบ</button>
-              <a class="btn btn-warning" href="register.php" role="button">สมัครสมาชิก</a>
+              <div><button type="submit" class="btn btn-success" name="submit">เข้าสู่ระบบ</button></div>
+              <div><a class="btn btn-warning" href="register.php" role="button">สมัครสมาชิก</a></div>
             </form>
           </div>
         </div>
