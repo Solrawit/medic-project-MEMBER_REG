@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body class="default">
-  <?php include 'includes/navbar.php';?>
+  <?php include 'includes/navbar_first.php';?>
   <div class="container-fluid">
     <div class="col-md-12 mt-4">
       <div class="row justify-content-md-center">
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-5">
-        <div class="card border-dark mt-2">
+        <div class="card border-info mt-2">
           <h5 class="card-header">ระบบล็อคอิน</h5>
           <div class="card-body">
             <div class="row justify-content-md-center mb-2">
@@ -66,10 +66,14 @@ if (isset($_POST["submit"])) {
                 <label>รหัสผ่าน</label>
                 <input type="password" class="form-control" name="user_password" placeholder="Enter Password" required=""/>
               </div><br>
-              <center><img src="assets/images/line.png" class="d-block w-1" alt="..."></center>
-              <br> <!-- รูปline login accz -->
-              <center><button type="submit" class="btn btn-success" name="submit">เข้าสู่ระบบ</button>
-              <a class="btn btn-warning" href="register.php" role="button">สมัครสมาชิก</a></center>
+              <center><button type="submit" class="btn btn-outline-success" name="submit">เข้าสู่ระบบ</button>
+              <a class="btn btn-outline-dark" href="register.php" role="button">สมัครสมาชิก</a></center>
+              <center>
+                <a href="login.php"> 
+                <img src="assets/images/line_btn.png" alt="..." width="200" height="90"> <!-- รูปline login acc -->
+                </a>
+              </center>
+              <br> 
             </form>
           </div>
         </div>

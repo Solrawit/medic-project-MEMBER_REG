@@ -38,7 +38,7 @@ session_start();
     }
 </style>
 <body class="default">
-  <?php include 'includes/navbar.php';?>
+  <?php include 'includes/navbar_first.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-11">

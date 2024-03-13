@@ -47,7 +47,7 @@ if (isset($_POST["submit"])) {
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body class="default">
-  <?php include 'includes/navbar.php';?>
+  <?php include 'includes/navbar_first.php';?>
   <div class="container-fluid">
     <div class="col-md-12 mt-4">
       <div class="row justify-content-md-center">
@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-5">
-        <div class="card border-dark mt-2">
+        <div class="card border-info mt-2">
           <h5 class="card-header">ระบบสมัครสมาชิก</h5>
           <div class="card-body">
             <div class="row justify-content-md-center mb-2">
@@ -92,7 +92,10 @@ if (isset($_POST["submit"])) {
                 <label>อีเมล์</label>
                 <input type="email" class="form-control" name="user_email" value="<?php echo $user_email;?>" placeholder="Enter Email" required=""/>
               </div>
-              <button type="submit" class="btn btn-success" name="submit">สมัครสมาชิก</button>
+              <br>
+              <center>
+              <button type="submit" class="btn btn-outline-success" name="submit">สมัครสมาชิก</button>
+              </center>
             </form>
           </div>
         </div>

@@ -28,7 +28,7 @@ if ($_SESSION != NULL) {
     <?php
     if ($_SESSION == NULL) {
       ?>
-      <button type="submit" class="btn btn-outline-primary my-2 my-sm-0" onclick="window.location.href='login.php'">เข้าสู่ระบบ</button>
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0" onclick="window.location.href='login.php'">เข้าสู่ระบบ</button>
       <button type="submit" class="btn btn-outline-danger my-2 my-sm-0" onclick="window.location.href='register.php'">สมัครสมาชิก</button>
       <?php
     }else{
