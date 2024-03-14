@@ -23,15 +23,15 @@ if (!isset($_SESSION['profile'])) {
     <?php require_once("nav.php"); ?>    
 
     <main class="container">
-    <div class="bg-light p-5 rounded">
+    <div class="bg-info p-5 rounded">
         <?php 
             if (isset($_SESSION['profile'])) {
                 $profile = $_SESSION['profile'];
             }
         ?>
-        <h1>Welcome, <?php echo $profile->name; ?></h1>
-        <p class="lead">Your email: <?php echo $profile->email; ?></p>
-        <img src="<?php echo $profile->picture; ?>" class="rounded" alt="profile img">
+        <h1>ยินดีต้อนรับคุณ, <?php echo $profile->name; ?></h1>
+        <p class="lead">อีเมล์ของคุณ: <?php echo $profile->email; ?></p>
+        <img src="<?php echo $profile->picture; ?> " class="rounded" alt="profile img">
     </div>
     </main>
 
