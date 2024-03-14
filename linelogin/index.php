@@ -21,8 +21,9 @@ require_once('LineLogin.php');
 
     <main class="container">
     <div class="bg-light p-5 rounded">
-        <h1>Welcome, to Line Login Web App</h1>
-        <p class="lead">Let's login to the web by using line login.</p>
+        <h1>ยินดีต้อนรับเข้าสู่หน้าหลักการเข้าสู่ระบบผ่านไลน์</h1>
+        <p class="lead">กรุณาล็อกอินเพื่อเข้าสู่ระบบใช้งาน.</p>
+        <img src="../assets/images/line1.png" alt="..." width="300" height="300"> <!-- รูปline login acc -->
     </div>
     </main>
 
