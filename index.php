@@ -2,6 +2,8 @@
 require_once('connections/mysqli.php');
 
 session_start();
+
+$title = "หน้าหลัก"; // ตั้งค่า title เริ่มต้น
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +14,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../assets/css/navbar.css">
-</head>
-<style>
+  <style>
     body {
       background-color: #BFBFBF; /* พื้นหลัง */
     }
@@ -36,20 +37,22 @@ session_start();
     .jumbotron .btn {
       margin-top: 1rem; /* เพิ่ม margin-top ในปุ่ม */
     }
-</style>
+  </style>
+</head>
 <body class="default">
   <?php include 'includes/navbar_first.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-11">
         <?php
-        for ($i=1; $i <= 4 ; $i++) { 
-          ?> <!-- ความห่างของกรอบ -->
-          <div class="jumbotron"> 
+        for ($i = 1; $i <= 4; $i++) {
+          ?>
+          <!-- ความห่างของกรอบ -->
+          <div class="jumbotron">
             <h1 class="display-4"><u>TEST HOMEPAGE MAIN</u></h1>
             <h4 class="display-10">ทดสอบหน้าหลัก</h4>
             <div class="row">
-              <div class="col-md-3"> <!-- ให้รูปภาพใน column ขนาด 3/12 -->
+              <div class="col-md-3">
                 <!-- เริ่มต้น Bootstrap Carousel -->
                 <div id="carouselExampleIndicators<?php echo $i; ?>" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
@@ -79,7 +82,8 @@ session_start();
                 </div>
                 <!-- จบ Bootstrap Carousel -->
               </div>
-              <div class="col-md-4"> <!-- ให้ปุ่มอยู่ใน column ขนาด 4/12 -->
+              <div class="col-md-4">
+                <!-- ให้ปุ่มอยู่ใน column ขนาด 4/12 -->
                 <div class="text-right mb-2"> <!-- จัดตำแหน่งปุ่มอยู่ทางขวาและเว้นระยะห่างด้านล่าง -->
                   <button type="button" class="btn btn-outline-dark">ทดสอบ</button>
                 </div>
@@ -97,5 +101,4 @@ session_start();
   <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
   <?php mysqli_close($Connection);?>
 </body>
-
 </html>
