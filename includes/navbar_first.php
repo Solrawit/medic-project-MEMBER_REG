@@ -1,6 +1,4 @@
 <?php
-
-
 $hostname = "localhost";
 $username = "root";
 $password = "";
@@ -25,8 +23,8 @@ if (isset($_SESSION['user_username'])) {
         echo "ข้อผิดพลาดในการดึงข้อมูลผู้ใช้: " . mysqli_error($Connection);
     }
 }
-
-$title = "หน้าหลัก"; // ตั้งค่า title เริ่มต้น
+    
+    $title = "MEDIC PROJECT"; // ตั้งค่า title เริ่มต้น
 
 // ตรวจสอบสถานะการเข้าสู่ระบบและระดับผู้ใช้
 if (isset($_SESSION['user_username'])) {
@@ -53,7 +51,7 @@ if (isset($_SESSION['user_username'])) {
         <?php if (!$isLoggedIn): ?>
             <!-- ถ้ายังไม่ได้เข้าสู่ระบบ -->
             <button type="button" class="btn btn-outline-info" onclick="window.location.href='login.php'">ทดสอบ</button>
-            <button type="button" class="btn btn-outline-danger" onclick="window.location.href='login.php'">ทดสอบ</button>
+            <button type="button" class="btn btn-outline-danger" onclick="window.location.href='register.php'">ทดสอบ</button>
         <?php else: ?>
             <!-- ถ้าเข้าสู่ระบบแล้ว -->
             <ul class="navbar-nav">
