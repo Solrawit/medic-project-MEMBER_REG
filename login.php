@@ -69,11 +69,11 @@ if (isset($_POST["submit"])) {
               <center><button type="submit" class="btn btn-outline-success" name="submit">เข้าสู่ระบบ</button>
               <a class="btn btn-outline-dark" href="register.php" role="button">สมัครสมาชิก</a></center>
               <center>
-                <a href="linepage/index.php"> 
+                <a href="linelogin/index.php"> 
                 <img src="assets/images/line_btn.png" alt="..." width="150" height="50"> <!-- รูปline login acc -->
                 </a>
               </center>
-              <center>รองรับการเข้าสู่ระบบผ่านไลน์</center>
+              <center>รองรับการเข้าสู่ระบบผ่านไลน์รองรับการเข้าสู่ระบบผ่านไลน์</center>
               <br> 
             </form>
           </div>

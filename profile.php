@@ -18,11 +18,11 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title><?php echo $title; ?></title>
-  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body class="default">
-  <?php include 'includes/navbar.php';?>
+  <?php include 'includes/navbar_first.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">
