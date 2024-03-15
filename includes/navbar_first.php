@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap JavaScript Bundle with Popper -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
 <?php
 if ($_SESSION != NULL) {
   $sql_tb_user = "SELECT * FROM mdpj_user WHERE user_username = '".$_SESSION['user_username']."'";
@@ -6,26 +24,34 @@ if ($_SESSION != NULL) {
 }
 ?>
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-<div class="container">
-  <span class="navbar-brand"><?php echo $title; ?></span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container">
+    <!-- Navbar brand with image -->
+    <a class="navbar-brand" href="index.php">
+      <img src="assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+      <?php echo $title; ?>
+    </a>
+    <!-- Navbar toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    
+      <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-home fa-lg"></i> หน้าหลัก <span class="sr-only"><!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="index.php"><i class="fa fa-home fa-lg"></i> หน้าหลัก <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-coffee fa-lg"></i> สนับสนุนค่ากาแฟ <span class="sr-only"><!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="index.php"><i class="fa fa-coffee fa-lg"></i> สนับสนุนค่ากาแฟ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-plus-square fa-lg"></i> ช่องทางการติดต่อ <span class="sr-only"><!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="index.php"><i class="fa fa-plus-square fa-lg"></i> ช่องทางการติดต่อ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"><!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="index.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
     </ul>
+    
 </div>
     <?php
     if ($_SESSION == NULL) {
@@ -79,3 +105,5 @@ window.onclick = function(event) {
   }
 }
 </script>
+</body>
+</html>
