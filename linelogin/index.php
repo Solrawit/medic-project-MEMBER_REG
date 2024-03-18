@@ -23,7 +23,7 @@ require_once('LineLogin.php');
     <div class="bg-light p-5 rounded">
         <h1>ยินดีต้อนรับเข้าสู่หน้าหลักการเข้าสู่ระบบผ่านไลน์</h1>
         <p class="lead">กรุณาล็อกอินเพื่อเข้าสู่ระบบใช้งาน.</p>
-        <img src="../assets/images/line1.png" alt="..." width="300" height="300"> <!-- รูปline login acc -->
+        <img src="../assets/images/line1.png" alt="..." width="300" height="300"> <!-- รูปline login accc -->
     </div>
     </main>
 
