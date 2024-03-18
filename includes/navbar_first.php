@@ -16,7 +16,6 @@
 </head>
 <body>
 
-
 <?php
 if ($_SESSION != NULL) {
   $sql_tb_user = "SELECT * FROM mdpj_user WHERE user_username = '".$_SESSION['user_username']."'";
@@ -24,6 +23,7 @@ if ($_SESSION != NULL) {
   $result_tb_user = mysqli_fetch_array($query_tb_user,MYSQLI_ASSOC);
 }
 ?>
+
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <!-- Navbar brand with image -->
