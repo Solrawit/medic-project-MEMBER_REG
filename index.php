@@ -93,6 +93,7 @@ session_start();
   <div class="container">
 
 <!-- text below the carousel -->
+<!-- 140 x 140 fix -->
 <div class="row">
   <div class="col-lg-4">
     <img src="assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 1" />
