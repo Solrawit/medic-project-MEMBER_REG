@@ -1,7 +1,16 @@
 <?php
-require_once('connections/mysqli.php');
+require_once('../connections/mysqli.php');
 
 session_start();
+
+if ($_SESSION == NULL) {
+  header("location:login.php");
+  exit();
+}
+
+$strSQL = "SELECT * FROM mdpj_user WHERE user_username = '".$_SESSION['user_username']."'";
+$objQuery = mysqli_query($Connection,$strSQL);
+$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +34,7 @@ session_start();
   </style>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_welcome.php';?>
+  <?php include '../includes/navbar_welcome.php';?>
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -36,7 +45,7 @@ session_start();
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 1">
+        <img src="../assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 1">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -46,7 +55,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item active">
-        <img src="assets/images/bg2.png" class="d-block w-400 img-fluid" alt="Image 2">
+        <img src="../assets/images/bg2.png" class="d-block w-400 img-fluid" alt="Image 2">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -56,7 +65,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 3">
+        <img src="../assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 3">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -96,21 +105,21 @@ session_start();
 <!-- 140 x 140 fix -->
 <div class="row">
   <div class="col-lg-4">
-    <img src="assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 1" />
+    <img src="../assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 1" />
 
     <h2>Heading</h2>
     <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
     <p><a class="btn btn-secondary" href="#">View details »</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
-    <img src="assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 2" />
+    <img src="../assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 2" />
 
     <h2>Heading</h2>
     <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
     <p><a class="btn btn-secondary" href="#">View details »</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
-    <img src="assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 3" />
+    <img src="../assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 3" />
 
     <h2>Heading</h2>
     <p>And lastly this, the third column of representative placeholder content.</p>
@@ -167,7 +176,7 @@ session_start();
 
 </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include '../includes/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

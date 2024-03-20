@@ -27,8 +27,7 @@ if ($_SESSION != NULL) {
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <!-- Navbar brand with image -->
-    <a class="navbar-brand" href="welcome.php">
-      <img src="./assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+    <a class="navbar-brand" href="./welcome.php">
       <img src="../assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
       <?php echo $title; ?>
     </a>
@@ -69,16 +68,16 @@ if ($_SESSION != NULL) {
       <?php echo "<i class='fa fa-user-circle-o fa-lg'></i> <span>ยินดีต้อนรับคุณ :</span> ".$result_tb_user["user_name"]." ".$result_tb_user["user_surname"]; ?>
     </a>
     <div id="navbarDropdown" class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="profile.php">ข้อมูลส่วนตัว</a>
+      <a class="dropdown-item" href="../profile.php">ข้อมูลส่วนตัว</a>
       <?php
       if ($_SESSION["user_level"] == "admin") {
         ?>
-        <a class="dropdown-item" href="admin/index.php">ระบบหลังบ้าน</a>
+        <a class="dropdown-item" href="../admin/index.php">ระบบหลังบ้าน</a>
         <?php
       }
       ?>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="logout.php"><i class="fa fa-sign-out"></i> ออกจากระบบ</a>
+      <a class="dropdown-item" href="../logout.php"><i class="fa fa-sign-out"></i> ออกจากระบบ</a>
     </div>
   </li>
 </ul>

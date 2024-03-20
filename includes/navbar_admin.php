@@ -48,7 +48,7 @@ $result_tb_user = mysqli_fetch_array($query_tb_user,MYSQLI_ASSOC);
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">ติดต่อฝ่ายสนับสนุน</a>
-          <a class="dropdown-item" href="../index.php">ออกจากการจัดการระบบ</a>
+          <a class="dropdown-item" href="../page_user/welcome.php">ออกจากการจัดการระบบ</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="../logout.php"><i class="fa fa-sign-out"></i> ออกจากระบบ</a>
         </div>
