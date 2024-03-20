@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
     $_SESSION["user_username"] = $objResult["user_username"];
     $_SESSION["user_level"] = $objResult["user_level"];
 
-    header("location:index.php");
+    header("location:welcome.php");
     exit();
   }
 }

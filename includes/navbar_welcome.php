@@ -27,8 +27,9 @@ if ($_SESSION != NULL) {
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <!-- Navbar brand with image -->
-    <a class="navbar-brand" href="index.php">
-      <img src="assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+    <a class="navbar-brand" href="welcome.php">
+      <img src="./assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+      <img src="../assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
       <?php echo $title; ?>
     </a>
     <!-- Navbar toggler -->
@@ -40,17 +41,17 @@ if ($_SESSION != NULL) {
     
       <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-home fa-lg"></i> หน้าหลัก <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="./welcome.php"><i class="fa fa-home fa-lg"></i> หน้าหลัก <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-coffee fa-lg"></i> สนับสนุนค่ากาแฟ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
-      <!--</li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-plus-square fa-lg"></i> ช่องทางการติดต่อ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
-      <!--</li>
+        <a class="nav-link" href="page_user/text_photo.php"><i class="fa fa-coffee fa-lg"></i> แปลงข้อความ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
-      <!--</li> -->
+        <a class="nav-link" href="./welcome.php"><i class="fa fa-plus-square fa-lg"></i> ตั้งค่าการแจ้งเตือน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./welcome.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+      </li>
     </ul>
     
 </div>
