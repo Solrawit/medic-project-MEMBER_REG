@@ -27,4 +27,5 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <p>หน้าสำหรับการแปลงรูปภาพเป็นข้อความ</p>
     </div>
 </body>
+<?php mysqli_close($Connection);?>
 </html>
