@@ -23,7 +23,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background-image: url('assets/images/bg4.jpg');
+      background-image: url('../assets/images/bg4.jpg');
       background-size: cover;
       background-position: center;
     }
