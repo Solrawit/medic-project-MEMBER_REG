@@ -38,6 +38,8 @@ if (isset($_POST["submit"])) {
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body class="default">
   <?php include 'includes/navbar_first.php';?>
@@ -82,6 +84,7 @@ if (isset($_POST["submit"])) {
     </div>
   </div>
   <?php include 'includes/footer.php';?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <?php mysqli_close($Connection);?>
@@ -93,7 +96,12 @@ if (isset($_GET["register"])) {
   if ($_GET["register"] == "success") {
     ?>
     <script type="text/javascript">
-      alert("สมัครสมาชิกสำเร็จแล้ว เข้าสู่ระบบได้เลย");
+      Swal.fire({
+        icon: 'success',
+        title: 'สมัครสมาชิกสำเร็จแล้ว',
+        text: 'เข้าสู่ระบบได้เลย',
+        confirmButtonText: 'ตกลง'
+      });
     </script>
     <?php
   }

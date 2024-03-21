@@ -20,85 +20,79 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Photo To Text</title>
     <style type="text/css">
-        body{
-            padding: 0px 100px;
-            font-family: sans-serif;
+        body {
+            padding: 20px 100px;
+            font-family: 'Sarabun', sans-serif;
         }
-
-        .upper div{
+        .upper div {
             display: inline;
             margin-left: 100px;
             white-space: pre;
         }
-        .bottom{
+        .bottom {
             margin-top: 30px;
             display: flex;
         }
-        .bottom div{
+        .bottom div {
             flex: 1;
             border: 1px solid rgb(118, 118, 118);
             height: 400px;
             margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
         }
-        .bottom div img{
-            max-width: calc(100% - 20px);
-            max-height: calc(100% - 20px);
-            margin: 10px;
+        .bottom div img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
-        .bottom div textarea{
+        .bottom div textarea {
             resize: none;
-            width: calc(100% - 21px);
-            height: calc(100% - 21px);
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
             padding: 10px;
             font-size: 20px;
             outline: none;
             border: none;
         }
-        .bottom div:first-child{
-            margin-left: 0px;
-            -webkit-box-align: center;
-            -webkit-box-pack: center;
-            display: -webkit-box;
+        .btn-container {
+            margin-top: 20px;
         }
-        .bottom div:last-child{
-            margin-right: 0px;
-        }
-        .bottom div textarea {
-    font-family: 'Sarabun', sans-serif; /* หรือ Arial */
-    width: 100%;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-}
     </style>
 </head>
 <body>
 <?php include '../includes/navbar_welcome.php';?>
-  <br>
-  <div class="container">
-        <div class="upper">
-            <input type="file">
-            <button>Start</button>
-            <div class="progress"></div>
+<br>
+<div class="container">
+    <div class="upper">
+        <input type="file" class="form-control"><br>
+        <button class="btn btn-primary">เริ่มต้นการอ่านข้อความ.!</button>
+        <div class="progress"></div>
+    </div>
+    <div class="bottom">
+        <div>
+            <img src="" alt="">
         </div>
-        <div class="bottom">
-            <div>
-                <img src="">
-            </div>
-            <div>
-                <textarea placeholder="text"></textarea>
-            </div>
+        <div>
+            <textarea class="form-control" placeholder="Text"></textarea>
         </div>
     </div>
-    <div class="container">
-    <center><button type="button" class="btn btn-secondary btn-lg">Large button</button></center>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
-    <script src="script.js"></script>
-    <?php include '../includes/footer.php';?>
+</div>
+<div class="container btn-container">
+    <center><button type="button" class="btn btn-secondary btn-lg">ตั้งค่าการแจ้งเตือน</button></center>
+    <br>
+    <center><button type="button" class="btn btn-danger btn-lg" onclick="window.location.reload();">ยกเลิก</button></center>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+<script src="script.js"></script>
+<?php include '../includes/footer.php';?>
 </body>
 <?php mysqli_close($Connection);?>
 </html>
