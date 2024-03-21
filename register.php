@@ -45,6 +45,17 @@ if (isset($_POST["submit"])) {
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background-image: url('assets/images/bg4.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .blurry-img {
+      filter: blur(10px); /* Adjust as needed */
+    }
+  </style>
 </head>
 <body class="default">
   <?php include 'includes/navbar_first.php';?>

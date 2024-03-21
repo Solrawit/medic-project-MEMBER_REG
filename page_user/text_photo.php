@@ -25,6 +25,14 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
     <title>Photo To Text</title>
     <style type="text/css">
+         body {
+      background-image: url('../assets/images/bg4.jpg');
+      background-size: cover;
+      background-position: center;
+        }
+    .blurry-img {
+      filter: blur(10px); /* Adjust as needed */
+        }
         body {
             padding: 20px 100px;
             font-family: 'Sarabun', sans-serif;
@@ -81,7 +89,13 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <img src="" alt="">
         </div>
         <div>
-            <textarea class="form-control" placeholder="Text"></textarea>
+        <textarea id="myTextarea" class="form-control" placeholder="Text"></textarea>
+
+        <script>
+            document.getElementById("myTextarea").addEventListener("keypress", function(event) {
+            event.preventDefault(); // ยกเลิกการกระทำของเหตุการณ์ keypress
+            });
+        </script>
         </div>
     </div>
 </div>
