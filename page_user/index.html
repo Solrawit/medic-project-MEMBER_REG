@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Optical character recognition from image</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    
+    <style type="text/css">
+        body{
+            padding: 0px 100px;
+            font-family: sans-serif;
+        }
+        .container{
+            margin-top: 50px
+        }
+        .upper div{
+            display: inline;
+            margin-left: 100px;
+            white-space: pre;
+        }
+        .bottom{
+            margin-top: 30px;
+            display: flex;
+        }
+        .bottom div{
+            flex: 1;
+            border: 1px solid rgb(118, 118, 118);
+            height: 400px;
+            margin: 10px;
+        }
+        .bottom div img{
+            max-width: calc(100% - 20px);
+            max-height: calc(100% - 20px);
+            margin: 10px;
+        }
+        .bottom div textarea{
+            resize: none;
+            width: calc(100% - 21px);
+            height: calc(100% - 21px);
+            padding: 10px;
+            font-size: 20px;
+            outline: none;
+            border: none;
+        }
+        .bottom div:first-child{
+            margin-left: 0px;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            display: -webkit-box;
+        }
+        .bottom div:last-child{
+            margin-right: 0px;
+        }
+        .bottom div textarea {
+    font-family: 'Sarabun', sans-serif; /* หรือ Arial */
+    width: 100%;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upper">
+            <input type="file">
+            <button>Start</button>
+            <div class="progress"></div>
+        </div>
+        <div class="bottom">
+            <div>
+                <img src="">
+            </div>
+            <div>
+                <textarea placeholder="text"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
