@@ -49,7 +49,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
             <hr>
             <a class="btn btn-success" href="#" role="button">แก้ไขข้อมูล</a>
-            <a class="btn btn-warning" href="#" role="button">เปลี่ยนรหัสผ่าน</a>
+            <a class="btn btn-warning" href="changepassword.php" role="button">เปลี่ยนรหัสผ่าน</a>
           </div>
         </div>
       </div>
