@@ -83,12 +83,16 @@ if (isset($_POST["submit"])) {
 
   <script>
     // ฟังก์ชันสำหรับแสดง SweetAlert
-    function showAlert(icon, title, text, button) {
+    function showAlert(icon, title, text, button, callback) {
       Swal.fire({
         icon: icon,
         title: title,
         text: text,
         confirmButtonText: button
+      }).then((result) => {
+        if (result.isConfirmed && callback) {
+          callback();
+        }
       });
     }
 
@@ -110,22 +114,24 @@ if (isset($_POST["submit"])) {
             $icon = 'success';
             $title = 'สำเร็จ!';
             $text = 'เปลี่ยนรหัสผ่านสำเร็จ';
+            // เพิ่ม callback function เพื่อให้ทำการ redirect ไปยังหน้า login.php
+            $callback = 'function() { window.location.href = "login.php"; }';
             break;
-            case 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง':
+          case 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง':
             $icon = 'error';
             $title = 'ข้อผิดพลาด!';
             $text = 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง';
             break;
-            default:
+          default:
             $icon = 'info';
             $title = 'ข้อความ!';
             $text = 'ไม่พบข้อความที่ต้องการแสดง';
             break;
-            }
-            ?>
-            showAlert('<?php echo $icon; ?>', '<?php echo $title; ?>', '<?php echo $text; ?>', 'ตกลง');
-            <?php endif; ?>
-            </script>
-            
-            </body>
-            </html>
+        }
+      ?>
+      showAlert('<?php echo $icon; ?>', '<?php echo $title; ?>', '<?php echo $text; ?>', 'ตกลง', <?php echo $callback ?? 'null'; ?>);
+    <?php endif; ?>
+  </script>
+</body>
+</html>
+
