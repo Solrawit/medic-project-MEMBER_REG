@@ -22,7 +22,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body class="default">
-  <?php include 'includes/navbar_first.php';?>
+  <?php include 'includes/navbar_profile.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">
