@@ -20,23 +20,20 @@ if (isset($_POST["submit"])) {
 
     // ตรวจสอบรหัสผ่านปัจจุบัน
     if (md5($current_password) != $objResult['user_password']) {
-        $check_submit = '<div class="alert alert-danger" role="alert">รหัสผ่านปัจจุบันไม่ถูกต้อง</div>';
+        $check_submit = 'รหัสผ่านปัจจุบันไม่ถูกต้อง';
     } elseif ($new_password != $confirm_new_password) {
         // ตรวจสอบการยืนยันรหัสผ่านใหม่
-        $check_submit = '<div class="alert alert-danger" role="alert">การยืนยันรหัสผ่านใหม่ไม่ตรงกัน</div>';
+        $check_submit = 'การยืนยันรหัสผ่านใหม่ไม่ตรงกัน';
     } else {
         // เปลี่ยนรหัสผ่านใหม่
         $strSQL = "UPDATE mdpj_user SET user_password = '".md5($new_password)."' WHERE user_id = '".$objResult['user_id']."'";
         $objQuery = mysqli_query($Connection, $strSQL);
         if ($objQuery) {
-            $check_submit = '<div class="alert alert-success" role="alert">เปลี่ยนรหัสผ่านสำเร็จ</div>';
-
+            $check_submit = 'เปลี่ยนรหัสผ่านสำเร็จ';
             // ทำการออกจากระบบหลังจากเปลี่ยนรหัสผ่าน
             session_destroy();
-            echo "<script>alert('เปลี่ยนรหัสผ่านสำเร็จ'); window.location.href = 'login.php';</script>";
-            exit();
         } else {
-            $check_submit = '<div class="alert alert-danger" role="alert">มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง</div>';
+            $check_submit = 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง';
         }
     }
 }
@@ -49,6 +46,7 @@ if (isset($_POST["submit"])) {
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="default">
   <?php include 'includes/navbar_profile.php';?>
@@ -58,7 +56,6 @@ if (isset($_POST["submit"])) {
         <div class="card border-dark mt-4">
           <h5 class="card-header"><i class="fa fa-key"></i> เปลี่ยนรหัสผ่าน</h5>
           <div class="card-body">
-            <?php echo $check_submit; ?>
             <form method="post">
               <div class="form-group">
                 <label>รหัสผ่านปัจจุบัน</label>
@@ -81,8 +78,54 @@ if (isset($_POST["submit"])) {
   </div>
   <?php include 'includes/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <?php mysqli_close($Connection);?>
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<?php mysqli_close($Connection);?>
-</body>
-</html>
+  <script>
+    // ฟังก์ชันสำหรับแสดง SweetAlert
+    function showAlert(icon, title, text, button) {
+      Swal.fire({
+        icon: icon,
+        title: title,
+        text: text,
+        confirmButtonText: button
+      });
+    }
+
+    // ตรวจสอบค่า check_submit และแสดง SweetAlert ตามเงื่อนไข
+    <?php if(!empty($check_submit)): ?>
+      <?php
+        switch ($check_submit) {
+          case 'รหัสผ่านปัจจุบันไม่ถูกต้อง':
+            $icon = 'error';
+            $title = 'ข้อผิดพลาด!';
+            $text = 'รหัสผ่านปัจจุบันไม่ถูกต้อง';
+            break;
+          case 'การยืนยันรหัสผ่านใหม่ไม่ตรงกัน':
+            $icon = 'error';
+            $title = 'ข้อผิดพลาด!';
+            $text = 'การยืนยันรหัสผ่านใหม่ไม่ตรงกัน';
+            break;
+          case 'เปลี่ยนรหัสผ่านสำเร็จ':
+            $icon = 'success';
+            $title = 'สำเร็จ!';
+            $text = 'เปลี่ยนรหัสผ่านสำเร็จ';
+            break;
+          case 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง':
+            $icon = 'error';
+            $title = 'ข้อผิดพลาด!';
+            $text = 'มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง';
+            break;
+            default:
+            $icon = 'info';
+            $title = 'ข้อความ!';
+            $text = 'ไม่พบข้อความที่ต้องการแสดง';
+            break;
+            }
+            ?>
+            showAlert('<?php echo $icon; ?>', '<?php echo $title; ?>', '<?php echo $text; ?>', 'ตกลง');
+            <?php endif; ?>
+            </script>
+            
+            </body>
+            </html>
