@@ -22,8 +22,17 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
-  
-</head>
+  <style>
+        body {
+            background-image: url('assets/images/bg4.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blurry-img {
+            filter: blur(10px); /* Adjust as needed */
+        }
+    </style>
 </head>
 <body class="default">
   <?php include 'includes/navbar_profile.php';?>

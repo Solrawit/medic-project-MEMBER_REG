@@ -95,7 +95,75 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+    <br>
+    <br>
 
+<!-- Zone Card show list -->
+    <div class=container>
+    <div class="row">
+        <div class="col-6 col-sm-3">
+          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="people-outline"></ion-icon>
+            สมาชิกทั้งหมด 
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 คน</h5>
+              <p class="card-text">
+                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+       <div class="col-6 col-sm-3">
+          <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="cart-outline"></ion-icon>
+            ผู้ใช้OCR-SCANทั้งหมด
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 ครั้ง</h5>
+              <p class="card-text">
+                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+       
+       <div class="col-6 col-sm-3">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="desktop-outline"></ion-icon>
+            รายการสินค้า 
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 รายการ</h5>
+              <p class="card-text">
+                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col-6 col-sm-3">
+          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="cash-outline"></ion-icon>
+            ยอดขาย
+          </div>
+            <div class="card-body">
+              <h5 class="card-title"> 0  บาท</h5>
+              <p class="card-text">
+                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+          <!-- Zone Card show list -->
 
 <br>
   <!-- ส่วน body ทั้งหมด -->
