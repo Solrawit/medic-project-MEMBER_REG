@@ -22,6 +22,11 @@ session_start();
     .blurry-img {
       filter: blur(10px); /* Adjust as needed */
     }
+    .rounded-image {
+      border-radius: 50%; /* Make the image circular */
+      max-width: 100%; /* Ensure the image doesn't overflow its container */
+      height: auto; /* Maintain aspect ratio */
+    }
   </style>
 </head>
 <body class="default">
@@ -36,7 +41,7 @@ session_start();
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 1">
+      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 1">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -46,7 +51,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item active">
-        <img src="assets/images/bg2.png" class="d-block w-400 img-fluid" alt="Image 2">
+      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 2">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -56,7 +61,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 3">
+        <img src="assets/images/bg2.png" class="rounded-image" alt="Image 3">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
