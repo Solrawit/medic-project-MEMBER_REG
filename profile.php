@@ -20,6 +20,10 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  
+</head>
 </head>
 <body class="default">
   <?php include 'includes/navbar_profile.php';?>
@@ -48,7 +52,19 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 <h4>ระดับผู้ใช้ : <span class="badge badge-dark text-warning"><?php if ($objResult["user_level"] == "member") {echo "สมาชิกทั่วไป";}else{echo "ผู้ดูแลระบบ";} ?></span></h4>
 
             <hr>
-            <a class="btn btn-success" href="#" role="button">แก้ไขข้อมูล</a>
+            <a class="btn btn-success" href="#" role="button" onclick="showAlert()">แก้ไขข้อมูล</a>
+                  <!-- การแจ้งเตือนsweetalert กรณีปุ่มยังไม่เปิดให้userใช้ -->
+                    <script>
+                        function showAlert() {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'ยังไม่เปิดให้ใช้งาน',
+                                text: 'ขออภัย การแก้ไขข้อมูลยังไม่เปิดให้ใช้งาน',
+                                confirmButtonText: 'ตกลง'
+                            });
+                        }
+                    </script>
+
             <a class="btn btn-warning" href="changepassword.php" role="button">เปลี่ยนรหัสผ่าน</a>
           </div>
         </div>
