@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
 
             // ทำการออกจากระบบหลังจากเปลี่ยนรหัสผ่าน
             session_destroy();
-            header("location: login.php");
+            echo "<script>alert('เปลี่ยนรหัสผ่านสำเร็จ'); window.location.href = 'login.php';</script>";
             exit();
         } else {
             $check_submit = '<div class="alert alert-danger" role="alert">มีข้อผิดพลาดเกิดขึ้น โปรดลองอีกครั้ง</div>';
