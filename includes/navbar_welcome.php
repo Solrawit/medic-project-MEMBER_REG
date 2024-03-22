@@ -46,7 +46,7 @@ if ($_SESSION != NULL) {
         <a class="nav-link" href="./text_photo.php"><i class="fa fa-coffee fa-lg"></i> แปลงข้อความ <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./welcome.php"><i class="fa fa-plus-square fa-lg"></i> ตั้งค่าการแจ้งเตือน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="./alert_time.php"><i class="fa fa-plus-square fa-lg"></i> ตั้งค่าการแจ้งเตือน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./welcome.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>

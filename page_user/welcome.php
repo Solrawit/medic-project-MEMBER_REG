@@ -4,7 +4,7 @@ require_once('../connections/mysqli.php');
 session_start();
 
 if ($_SESSION == NULL) {
-  header("location:login.php");
+  header("location:../login.php");
   exit();
 }
 
