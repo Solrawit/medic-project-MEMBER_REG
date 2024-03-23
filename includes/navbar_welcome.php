@@ -70,7 +70,7 @@ if ($_SESSION != NULL) {
       <ul class="navbar-nav">
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown('navbarDropdown')">
-      <?php echo "<i class='fa fa-user-circle-o fa-lg'></i> <span>ยินดีต้อนรับคุณ :</span> ".$result_tb_user["user_name"]." ".$result_tb_user["user_surname"]; ?>
+      <?php echo "<i class='fa fa-user-circle-o fa-lg'></i> ยินดีต้อนรับคุณ : ".$result_tb_user["user_name"]." ".$result_tb_user["user_surname"]; ?>
     </a>
     <div id="navbarDropdown" class="dropdown-menu dropdown-menu-right">
       <a class="dropdown-item" href="../profile.php">ข้อมูลส่วนตัว</a>
