@@ -69,6 +69,7 @@ if (isset($_POST["submit"])) {
                 <label>ยืนยันรหัสผ่านใหม่</label>
                 <input type="password" class="form-control" name="confirm_new_password" placeholder="ยืนยันรหัสผ่านใหม่" required>
               </div>
+              <br>
               <button type="submit" class="btn btn-primary" name="submit">เปลี่ยนรหัสผ่าน</button>
             </form>
           </div>
