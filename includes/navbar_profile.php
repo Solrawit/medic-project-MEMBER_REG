@@ -54,7 +54,7 @@ if ($_SESSION != NULL) {
         <a class="nav-link" href="./page_user/alert_time.php"><i class="fa fa-plus-square fa-lg"></i> ตั้งค่าการแจ้งเตือน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./page_user/howto.php"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
+        <a class="nav-link" href="#"><i class="fa fa-youtube-play fa-lg"></i> วิธีการใช้งาน <span class="sr-only"> <!-- ไว้พิมข้อความเพื่ม --></span></a>
       </li>
     </ul>
     
