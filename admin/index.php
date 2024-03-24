@@ -20,6 +20,10 @@ if ($_SESSION == NULL) {
   <title><?php echo $title; ?></title>
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/dashboard.css">
+    <title>ระบบหลังบ้าน</title>
 </head>
 <style>
     body {
@@ -30,27 +34,25 @@ if ($_SESSION == NULL) {
       background-color: #FF795C; /* index ic */
     }
   </style>
-<body class="default">
-  <?php include '../includes/navbar_admin.php';?>
-  <div class="container-fluid">
-    <div class="row justify-content-md-center">
-      <div class="col-md-11">
-        <?php
-        for ($i=1; $i <= 3 ; $i++) {
-          ?>
-          <div class="jumbotron mt-4"> <!-- ความห่างของกรอบ -->
-            <h1 class="display-4">TEST ADMIN HOMEPAGE MAIN</h1>
-            <h4 class="display-10">ทดสอบหลังบ้าน</h4>
-          </div>
+ <body>
+    <?php include 'include/header.php'; ?>
+    <div class="container-fluid">
+      <div class="row">
+        <?php include 'include/sidebarMenu.php'; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <?php
-        }
-        ?>
+          for ($i=1; $i <= 3 ; $i++) {
+            ?>
+            <div class="jumbotron mt-4">
+              <h1 class="display-4">Hello, Admin!</h1>
+            </div>
+            <?php
+          }
+          ?>
+        </main>
       </div>
     </div>
-  </div>
-  <?php include '../includes/footer.php';?>
-  <script type="text/javascript" src="../assets/jquery/jquery-slim.min.js"></script>
-  <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
-  <?php mysqli_close($Connection);?>
-</body>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <?php mysqli_close($Connection); ?>
+  </body>
 </html>
