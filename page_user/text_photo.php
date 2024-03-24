@@ -93,7 +93,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
         <script>
             document.getElementById("myTextarea").addEventListener("keypress", function(event) {
-            event.preventDefault(); // ยกเลิกการกระทำของเหตุการณ์ keypress
+            event.preventDefault(); // ยกเลิกการกระทำของเหตุการณ์ keypress ไม่ให้ผู้ใช้พิมพ์หรือแก้ไขข้อมูล
             });
         </script>
         </div>
