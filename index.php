@@ -30,7 +30,7 @@ session_start();
   </style>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_first.php';?>
+  <?php include 'component/navbar_first.php';?>
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -172,7 +172,7 @@ session_start();
 
 </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include 'component/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

@@ -20,7 +20,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <title>Set Alert Time</title>
 </head>
 <body>
-<?php include '../includes/navbar_welcome.php';?>
+<?php include '../component/navbar_welcome.php';?>
   <br>
   <div class=container>
     <h1>Set Alert Time Page....</h1>

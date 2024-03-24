@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
   </style>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_first.php';?>
+  <?php include 'component/navbar_first.php';?>
   <div class="container-fluid">
     <div class="col-md-12 mt-4">
       <div class="row justify-content-md-center">
@@ -113,7 +113,7 @@ if (isset($_POST["submit"])) {
       </div>
     </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include 'component/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <?php mysqli_close($Connection);?>

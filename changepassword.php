@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_profile.php';?>
+  <?php include 'component/navbar_profile.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">

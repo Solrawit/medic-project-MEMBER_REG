@@ -35,7 +35,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     </style>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_profile.php';?>
+  <?php include 'component/navbar_profile.php';?>
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">
@@ -80,7 +80,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
       </div>
     </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include 'component/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <?php mysqli_close($Connection);?>

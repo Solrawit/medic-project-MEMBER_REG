@@ -35,10 +35,10 @@ if ($_SESSION == NULL) {
     }
   </style>
  <body>
-    <?php include 'include/header.php'; ?>
+    <?php include 'component/header.php'; ?>
     <div class="container-fluid">
       <div class="row">
-        <?php include 'include/sidebarMenu.php'; ?>
+        <?php include 'component/sidebarMenu.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <?php
           for ($i=1; $i <= 4 ; $i++) {

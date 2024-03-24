@@ -76,7 +76,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     </style>
 </head>
 <body>
-<?php include '../includes/navbar_welcome.php';?>
+<?php include '../component/navbar_welcome.php';?>
 <br>
 <div class="container">
     <div class="upper">
@@ -106,7 +106,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 </div>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
 <script src="script.js"></script>
-<?php include '../includes/footer.php';?>
+<?php include '../component/footer.php';?>
 </body>
 <?php mysqli_close($Connection);?>
 </html>
