@@ -71,8 +71,8 @@ $objQuery2 = mysqli_query($Connection, $strSQL2);
                   <td><?php echo $objResult2["user_email"]; ?></td>
                   <td><?php echo ($objResult2["user_level"] == "member") ? "สมาชิก" : "ผู้ดูแลระบบ"; ?></td>
                   <td>
-                    <button type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></button>
-                    <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                  <button type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> แก้ไข</button>
+                  <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>ลบ</button>
                   </td>
                 </tr>
                 <?php

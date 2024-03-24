@@ -3,12 +3,22 @@
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" href="index.php">
-          <i class="bi bi-house-door"></i> แผงควบคุม
+          <i class="bi bi-house-door"></i> หน้าหลัก
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="user.php">
-          <i class="bi bi-person-square"></i> ข้อมูลผู้ใช้งาน
+          <i class="bi bi-person-square"></i> ตารางข้อมูลผู้ใช้
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-person-square"></i> ตั้งค่า 1
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-person-square"></i> ตั้งค่า 2
         </a>
       </li>
     </ul>

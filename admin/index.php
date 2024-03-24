@@ -27,11 +27,11 @@ if ($_SESSION == NULL) {
 </head>
 <style>
     body {
-      background-color: #BFBFBF; /* พื้นหลัง */
+      background-color: #fff; /* พื้นหลัง */
     }
 
     .jumbotron {
-      background-color: #FF795C; /* index ic */
+      background-color: #E8E8E8; /* index ic */
     }
   </style>
  <body>
@@ -41,10 +41,11 @@ if ($_SESSION == NULL) {
         <?php include 'include/sidebarMenu.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <?php
-          for ($i=1; $i <= 3 ; $i++) {
+          for ($i=1; $i <= 4 ; $i++) {
             ?>
+            <br>
             <div class="jumbotron mt-4">
-              <h1 class="display-4">Hello, Admin!</h1>
+              <h1 class="display-4">ยินดีต้อนรับเข้าสู่ระบบหลังบ้าน</h1>
             </div>
             <?php
           }
@@ -52,6 +53,7 @@ if ($_SESSION == NULL) {
         </main>
       </div>
     </div>
+    <?php include '../includes/footer.php';?>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <?php mysqli_close($Connection); ?>
   </body>
