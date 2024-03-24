@@ -11,7 +11,7 @@ if ($_SESSION == NULL) {
 
 $id = $_POST["id"];
 
-$sql = "UPDATE mdpj_user SET user_password = '".md5($_POST['user_password'])."' WHERE user_id = '".$id."'";
+$sql = "UPDATE mdp_juser SET user_password = '".md5($_POST['user_password'])."' WHERE user_id = '".$id."'";
 $query = mysqli_query($Connection,$sql);
 
 header("location:user.php?update=pass");
