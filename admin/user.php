@@ -33,23 +33,23 @@ $objQuery2 = mysqli_query($Connection,$strSQL2);
       <div class="col-md-11 mt-4 mb-4">
         <div class="row">
           <div class="col-auto mr-auto">
-            <h3>ข้อมูลผู้ใช้งาน <span class="badge badge-info"><i class="fa fa-list"></i></span></h3>
+            <h3>ข้อมูลผู้ใช้งาน <span class="badge badge-dark"><i class="fa fa-list"></i></span></h3>
           </div>
         </div>
         <div class="card mt-3">
           <div class="card-body">
             <table class="table table-hover table-bordered mb-0" id="datatables">
               <thead>
-                <tr class="bg-info">
-                  <th scope="col" width="60px">ลำดับที่</th>
+                <tr class="bg-warning">
+                  <th scope="col" width="90px">ลำดับที่</th>
                   <th scope="col">ชื่อผู้ใช้</th>
-                  <th scope="col" width="90px">รหัสผ่าน</th>
+                  <th scope="col" width="125px">รหัสผ่าน</th>
                   <th scope="col">ขื่อ</th>
                   <th scope="col">นามสกุล</th>
                   <th scope="col">เพศ</th>
                   <th scope="col">อีเมล์</th>
                   <th scope="col">ระดับผู้ใช้</th>
-                  <th scope="col" width="60px">ตัวเลือก</th>
+                  <th scope="col" width="90px">ตัวเลือก</th>
                 </tr>
               </thead>
               <tbody>
