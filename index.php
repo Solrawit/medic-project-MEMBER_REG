@@ -20,12 +20,12 @@ session_start();
     }
 
     .blurry-img {
-      filter: blur(10px); /* Adjust as needed */
+      filter: blur(10px); /* เบลอ */
     }
     .rounded-image {
-      border-radius: 50%; /* Make the image circular */
-      max-width: 100%; /* Ensure the image doesn't overflow its container */
-      height: auto; /* Maintain aspect ratio */
+      border-radius: 50%; /* ทําให้ภาพเป็นวงกลม */
+      max-width: 100%; /* ตรวจสอบว่ารูปภาพไม่ล้นคอนเทนเนอร์ */
+      height: auto; /* อัตราส่วนภาพ */
     }
   </style>
 </head>

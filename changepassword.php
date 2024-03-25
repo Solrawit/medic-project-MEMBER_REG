@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
       });
     }
 
-    // ตรวจสอบค่า check_submit และแสดง SweetAlert ตามเงื่อนไข
+    // ตรวจสอบค่า check_submit แล้วแสดง SweetAlert ตามเงื่อนไข
     <?php if(!empty($check_submit)): ?>
       <?php
         switch ($check_submit) {
