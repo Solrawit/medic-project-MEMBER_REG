@@ -39,7 +39,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   </style>
 </head>
 <body class="default">
-  <?php include '../compooment/navbar_welcome.php';?>
+  <?php include '../component/navbar_welcome.php';?>
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

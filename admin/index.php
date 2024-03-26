@@ -53,7 +53,7 @@ if ($_SESSION == NULL) {
         </main>
       </div>
     </div>
-    <?php include '../includes/footer.php';?>
+    <?php include '../component/footer.php';?>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <?php mysqli_close($Connection); ?>
   </body>

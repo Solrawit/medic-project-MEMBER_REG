@@ -34,10 +34,10 @@ $objQuery2 = mysqli_query($Connection, $strSQL2);
   <link rel="stylesheet" href="assets/dashboard.css">
 </head>
 <body class="default">
-  <?php include 'include/header.php';?>
+  <?php include 'component/header.php';?>
   <div class="container-fluid">
     <div class="row">
-      <?php include 'include/sidebarMenu.php'; ?>
+      <?php include 'component/sidebarMenu.php'; ?>
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">ข้อมูลผู้ใช้งาน</h1>
@@ -85,7 +85,7 @@ $objQuery2 = mysqli_query($Connection, $strSQL2);
       </main>
     </div>
   </div>
-  <?php include '../includes/footer.php';?>
+  <?php include '../component/footer.php';?>
   <script type="text/javascript" src="../assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="../assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="../assets/DataTables/datatables.min.js"></script>

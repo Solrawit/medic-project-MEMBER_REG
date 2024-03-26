@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
       </div>
     </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include 'component/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <?php mysqli_close($Connection);?>
