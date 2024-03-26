@@ -21,7 +21,7 @@ $query_tb_user = mysqli_query($Connection,$sql_tb_user);
 $result_tb_user = mysqli_fetch_array($query_tb_user,MYSQLI_ASSOC);
 ?>
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <span class="navbar-brand"><?php echo $title; ?></span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

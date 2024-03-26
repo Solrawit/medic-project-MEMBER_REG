@@ -24,7 +24,7 @@ if ($_SESSION != NULL) {
   $result_tb_user = mysqli_fetch_array($query_tb_user,MYSQLI_ASSOC);
 }
 ?>
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <!-- Navbar brand with image -->
     <a class="navbar-brand" href="index.php">
