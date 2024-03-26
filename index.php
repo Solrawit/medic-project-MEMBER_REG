@@ -23,7 +23,7 @@ session_start();
       filter: blur(10px); /* เบลอ */
     }
     .rounded-image {
-      border-radius: 50%; /* ทําให้ภาพเป็นวงกลม */
+      border-radius: 32%; /* ทําให้ภาพเป็นวงกลม */
       max-width: 100%; /* ตรวจสอบว่ารูปภาพไม่ล้นคอนเทนเนอร์ */
       height: auto; /* อัตราส่วนภาพ */
     }
