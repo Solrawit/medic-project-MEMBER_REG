@@ -32,7 +32,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
       filter: blur(10px); /* Adjust as needed */
     }
     .rounded-image {
-      border-radius: 50%; /* Make the image circular */
+      border-radius: 35%; /* Make the image circular */
       max-width: 100%; /* Ensure the image doesn't overflow its container */
       height: auto; /* Maintain aspect ratio */
     }
