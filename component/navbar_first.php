@@ -11,7 +11,27 @@
   <style>
     /* CSS Style to add shadow to Navbar */
     .navbar {
-      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Add shadow with specific values */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .navbar-brand img {
+      border-radius: 50%; /* ใส่รูปโลโก้เป็นวงกลม */
+    }
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem; /* ปรับขนาดพื้นที่คลิกสำหรับ Navbar links */
+    }
+    .navbar-nav .nav-link i {
+      margin-right: 5px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+    }
+    .dropdown-menu {
+      border: none; /* ลบเส้นขอบ dropdown */
+      border-radius: 0.5rem; /* ปรับเส้นขอบ dropdown เป็นมนเว้นมน */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาใน dropdown */
+    }
+    .dropdown-menu a {
+      padding: 0.5rem 1rem; /* ปรับขนาดพื้นที่คลิกสำหรับ dropdown links */
+    }
+    .dropdown-divider {
+      margin: 0; /* ลบเว้นระหว่าง dropdown items */
     }
   </style>
 </head>
