@@ -103,8 +103,8 @@ if (isset($_POST["submit"])) {
                             <label>รหัสผ่าน</label>
                             <input type="password" class="form-control" name="user_password" placeholder="Enter Password" required=""/>
                         </div><br>
-                        <center><button type="submit" class="btn btn-outline-success" name="submit">เข้าสู่ระบบ</button>
-                            <a class="btn btn-outline-dark" href="register.php" role="button">สมัครสมาชิก</a></center>
+                        <center><button type="submit" class="btn btn-outline-primary" name="submit">เข้าสู่ระบบ</button>
+                            <a class="btn btn-outline-danger" href="register.php" role="button">สมัครสมาชิก</a></center>
                         <center>
                             <a href="linelogin/index.php">
                                 <img src="assets/images/line_btn.png" alt="..." width="150" height="50"> <!-- รูปline login acc -->

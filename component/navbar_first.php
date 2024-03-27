@@ -44,7 +44,7 @@ if ($_SESSION != NULL) {
         <!-- แทรกเมนูต่อจากนี้ได้ตามต้องการ -->
       </ul>
       <?php if ($_SESSION == NULL) { ?>
-        <button type="button" class="btn btn-outline-info me-2" onclick="window.location.href='login.php'">เข้าสู่ระบบ</button>
+        <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='login.php'">เข้าสู่ระบบ</button>
         <button type="button" class="btn btn-outline-danger" onclick="window.location.href='register.php'">สมัครสมาชิก</button>
       <?php } else { ?>
         <ul class="navbar-nav mb-2 mb-lg-0">
