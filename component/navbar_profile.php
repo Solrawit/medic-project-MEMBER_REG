@@ -46,7 +46,7 @@ if ($_SESSION != NULL) {
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <!-- Navbar brand with image -->
-    <a class="navbar-brand" href="./welcome.php">
+    <a class="navbar-brand" href="page_user/welcome.php">
       <img src="./assets/images/dog.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
       <?php echo $title; ?>
     </a>
