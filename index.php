@@ -165,8 +165,12 @@ session_start();
 
   </div>
 </div>
-
+<!-- Loading -->
+<div class="spinner-grow" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 <hr class="featurette-divider">
+<!-- Loading -->
 
 <!-- /END THE FEATURETTES -->
 
