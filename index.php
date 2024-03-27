@@ -165,6 +165,26 @@ session_start();
 
   </div>
 </div>
+<!-- END THE FEATURETTES -->
+ <!-- Announcement Modal -->
+ <!-- <div id="announcementModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="announcementModalLabel">Welcome to Our Website!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This is a popup announcement to welcome you to our website. Feel free to explore!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- End Announcement Modal -->
+
 <!-- Loading -->
 <div class="spinner-grow" role="status">
   <span class="visually-hidden">Loading...</span>
@@ -180,6 +200,13 @@ session_start();
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#announcementModal').modal('show');
+    });
+  </script>
   <?php mysqli_close($Connection);?>
 </body>
 </html>
+
+<!-- https://via.placeholder.com/300 Ex ขนาดรูปภาพ -->
