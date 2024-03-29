@@ -110,7 +110,7 @@ $query = mysqli_query($Connection, $sql);
             <?php echo $check_submit; ?>
             <table class="table table-bordered table-hover"> <!-- table-sm -->
                 <thead>
-                <tr class="table-info">
+                <tr class="table-dark">
                     <th scope="col" width="65px">ลำดับที่</th>
                     <th scope="col">ชื่อผู้ใช้</th>
                     <th scope="col" width="130px">รหัสผ่าน</th>

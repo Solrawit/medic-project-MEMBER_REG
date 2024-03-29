@@ -19,7 +19,7 @@
   date_default_timezone_set('Asia/Bangkok');
 
   //กำหนด title เว็บไซต์
-  $title = "BETA TEST";
+  $title = "MECDIC TEST 1.0";
 
   // เลือกข้อมูลผู้ใช้งาน
   if ($_SESSION != NULL) {
