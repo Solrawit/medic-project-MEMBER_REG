@@ -23,13 +23,13 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background-image: url('../assets/images/bg4.jpg');
+      background-image: url('../assets/images/bluewhite.jpg');
       background-size: cover;
       background-position: center;
     }
 
     .blurry-img {
-      filter: blur(10px); /* Adjust as needed */
+      filter: blur(5px); /* Adjust as needed */
     }
     .rounded-image {
       border-radius: 35%; /* Make the image circular */
@@ -40,6 +40,12 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 </head>
 <body class="default">
   <?php include '../component/navbar_welcome.php';?>
+  
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Copyright 2024 Website By Computer Science RMUT All Rights Reserved.
+            <a class="text-white" href="#">MEDIC OCR</a>
+        </div>
+  
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -50,7 +56,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img src="../assets/images/bg2.png" class="rounded-image" alt="Image 1">
+        <img src="../assets/images/banner2.png" class="rounded-image" alt="Image 1">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -60,7 +66,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
         </div>
       </div>
       <div class="carousel-item active">
-        <img src="../assets/images/bg2.png" class="rounded-image" alt="Image 2">
+        <img src="../assets/images/banner2.png" class="rounded-image" alt="Image 2">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -70,7 +76,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../assets/images/bg2.png" class="rounded-image" alt="Image 3">
+        <img src="../assets/images/banner2.png" class="rounded-image" alt="Image 3">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -90,16 +96,6 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     </button>
   </div><!-- /.carousel -->
 </div>
-
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
     <br>
     <br>
 

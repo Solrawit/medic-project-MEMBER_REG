@@ -26,7 +26,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <title>Photo To Text</title>
     <style type="text/css">
          body {
-      background-image: url('../assets/images/bg4.jpg');
+      background-image: url('../assets/images/bluewhite.jpg');
       background-size: cover;
       background-position: center;
         }

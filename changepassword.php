@@ -47,9 +47,27 @@ if (isset($_POST["submit"])) {
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+        body {
+      background-image: url('assets/images/bluewhite.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .blurry-img {
+      filter: blur(10px); /* เบลอ */
+    }
+    </style>
 </head>
 <body class="default">
   <?php include 'component/navbar_profile.php';?>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Copyright 2024 Website By Computer Science RMUT All Rights Reserved.
+            <a class="text-white" href="#">MEDIC OCR</a>
+        </div>
+
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">

@@ -3,7 +3,7 @@
   $username = "root";
   $password = "";
   $database = "mdpj_user";
-  $Connection = mysqli_connect($hostname, $username, $password, $database);
+  $Connection = mysqli_connect($hostname, $username, $password, $database); #
 
   if (!$Connection) {
     exit('ไม่สามารถเชื่อมต่อกับฐานข้อมูล');

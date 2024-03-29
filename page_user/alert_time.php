@@ -19,6 +19,56 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Alert Time</title>
 </head>
+<style type="text/css">
+         body {
+      background-image: url('../assets/images/bluewhite.jpg');
+      background-size: cover;
+      background-position: center;
+        }
+    .blurry-img {
+      filter: blur(10px); /* Adjust as needed */
+        }
+        body {
+            padding: 20px 100px;
+            font-family: 'Sarabun', sans-serif;
+        }
+        .upper div {
+            display: inline;
+            margin-left: 100px;
+            white-space: pre;
+        }
+        .bottom {
+            margin-top: 30px;
+            display: flex;
+        }
+        .bottom div {
+            flex: 1;
+            border: 1px solid rgb(118, 118, 118);
+            height: 400px;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .bottom div img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .bottom div textarea {
+            resize: none;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            padding: 10px;
+            font-size: 20px;
+            outline: none;
+            border: none;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+    </style>
 <body>
 <?php include '../component/navbar_welcome.php';?>
   <br>

@@ -66,7 +66,7 @@ if (isset($_POST["submit"])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            background-image: url('assets/images/bg4.jpg');
+            background-image: url('assets/images/bluewhite.jpg');
             background-size: cover;
             background-position: center;
         }

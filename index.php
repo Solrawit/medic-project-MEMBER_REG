@@ -14,7 +14,7 @@ require_once('connections/mysqli.php');
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background-image: url('assets/images/bg4.jpg');
+      background-image: url('assets/images/bluewhite.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -31,6 +31,14 @@ require_once('connections/mysqli.php');
 </head>
 <body class="default">
   <?php include 'component/navbar_first.php';?>
+    <!-- หัวประกาศ -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Copyright 2024 Website By Computer Science RMUT All Rights Reserved.
+            <a class="text-white" href="#">MEDIC OCR</a>
+        </div>
+
+    <!-- หัวประกาศ -->
+
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -41,7 +49,7 @@ require_once('connections/mysqli.php');
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 1">
+      <img src="assets/images/banner2.png" class="rounded-image" alt="Image 1">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -51,7 +59,7 @@ require_once('connections/mysqli.php');
         </div>
       </div>
       <div class="carousel-item active">
-      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 2">
+      <img src="assets/images/banner2.png" class="rounded-image" alt="Image 2">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -61,7 +69,7 @@ require_once('connections/mysqli.php');
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="rounded-image" alt="Image 3">
+        <img src="assets/images/banner2.png" class="rounded-image" alt="Image 3">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -81,16 +89,6 @@ require_once('connections/mysqli.php');
     </button>
   </div><!-- /.carousel -->
 </div>
-
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
 
 
 <br>
@@ -131,8 +129,8 @@ require_once('connections/mysqli.php');
 
 <div class="row featurette">
   <div class="col-md-7">
-    <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+    <h2 class="featurette-heading">การใช้ระบบ OCR (Optical Character Recognition) เพื่อแปลงข้อมูลจากภาพเป็นข้อความ <span class="text-white">มีข้อดีหลายประการ.</span></h2>
+    <p class="lead">การใช้ระบบ OCR นั้นมีความสำคัญในการเพิ่มประสิทธิภาพในการประมวลผลข้อมูลและลดความผิดพลาดที่อาจเกิดขึ้นในกระบวนการป้อนข้อมูลด้วยมือโดยไม่จำเป็นต้องพิจารณาความซับซ้อนของการแปลงข้อมูลด้วยตนเอง ทั้งนี้ยังช่วยเพิ่มความสะดวกสบายและเร่งความเร็วในการเข้าถึงข้อมูลต่างๆ ด้วยลักษณะที่เป็นมิตรและสะดวกในการใช้งาน.</p>
   </div>
   <div class="col-md-5">
     <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>

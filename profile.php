@@ -24,7 +24,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
   <style>
     body {
-      background-image: url('assets/images/bg4.jpg');
+      background-image: url('assets/images/bluewhite.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -85,6 +85,15 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 </head>
 <body class="default">
   <?php include 'component/navbar_profile.php';?>
+
+<!-- หัวประกาศ -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © Copyright 2024 Website By Computer Science RMUT All Rights Reserved.
+            <a class="text-white" href="#">MEDIC OCR</a>
+        </div>
+
+    <!-- หัวประกาศ -->
+
   <div class="container-fluid">
     <div class="row justify-content-md-center">
       <div class="col-md-5">
