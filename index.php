@@ -20,12 +20,17 @@ session_start();
     }
 
     .blurry-img {
-      filter: blur(10px); /* Adjust as needed */
+      filter: blur(10px); /* เบลอ */
+    }
+    .rounded-image {
+      border-radius: 32%; /* ทําให้ภาพเป็นวงกลม */
+      max-width: 100%; /* ตรวจสอบว่ารูปภาพไม่ล้นคอนเทนเนอร์ */
+      height: auto; /* อัตราส่วนภาพ */
     }
   </style>
 </head>
 <body class="default">
-  <?php include 'includes/navbar_first.php';?>
+  <?php include 'component/navbar_first.php';?>
   <br>
   <div class="container">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -36,7 +41,7 @@ session_start();
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 1">
+      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 1">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -46,7 +51,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item active">
-        <img src="assets/images/bg2.png" class="d-block w-400 img-fluid" alt="Image 2">
+      <img src="assets/images/bg2.png" class="rounded-image" alt="Image 2">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -56,7 +61,7 @@ session_start();
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/images/bg2.png" class="d-block w-100 img-fluid" alt="Image 3">
+        <img src="assets/images/bg2.png" class="rounded-image" alt="Image 3">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -93,6 +98,7 @@ session_start();
   <div class="container">
 
 <!-- text below the carousel -->
+<!-- 140 x 140 fix -->
 <div class="row">
   <div class="col-lg-4">
     <img src="assets/images/140.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Image 1" />
@@ -159,17 +165,48 @@ session_start();
 
   </div>
 </div>
+<!-- END THE FEATURETTES -->
+ <!-- Announcement Modal -->
+ <!-- <div id="announcementModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="announcementModalLabel">Welcome to Our Website!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This is a popup announcement to welcome you to our website. Feel free to explore!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- End Announcement Modal -->
 
+<!-- Loading -->
+<div class="spinner-grow" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 <hr class="featurette-divider">
+<!-- Loading -->
 
 <!-- /END THE FEATURETTES -->
 
 </div>
   </div>
-  <?php include 'includes/footer.php';?>
+  <?php include 'component/footer.php';?>
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#announcementModal').modal('show');
+    });
+  </script>
   <?php mysqli_close($Connection);?>
 </body>
 </html>
+
+<!-- https://via.placeholder.com/300 Ex ขนาดรูปภาพ -->
