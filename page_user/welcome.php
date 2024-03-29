@@ -100,10 +100,10 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <br>
 
 <!-- Zone Card show list -->
-    <div class=container>
+<div class=container>
     <div class="row">
         <div class="col-6 col-sm-3">
-          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
             <div class="card-header">
               <ion-icon name="people-outline"></ion-icon>
             สมาชิกทั้งหมด 
@@ -111,14 +111,14 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <div class="card-body">
               <h5 class="card-title">จำนวน 0 คน</h5>
               <p class="card-text">
-                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
               </p>
             </div>
           </div>
         </div>
  
        <div class="col-6 col-sm-3">
-          <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
             <div class="card-header">
               <ion-icon name="cart-outline"></ion-icon>
             ผู้ใช้OCR-SCANทั้งหมด
@@ -126,7 +126,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <div class="card-body">
               <h5 class="card-title">จำนวน 0 ครั้ง</h5>
               <p class="card-text">
-                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
  
        
        <div class="col-6 col-sm-3">
-          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
             <div class="card-header">
               <ion-icon name="desktop-outline"></ion-icon>
             รายการสินค้า 
@@ -142,14 +142,14 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <div class="card-body">
               <h5 class="card-title">จำนวน 0 รายการ</h5>
               <p class="card-text">
-                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
               </p>
             </div>
           </div>
         </div>
  
         <div class="col-6 col-sm-3">
-          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
             <div class="card-header">
               <ion-icon name="cash-outline"></ion-icon>
             ยอดขาย
@@ -157,7 +157,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
             <div class="card-body">
               <h5 class="card-title"> 0  บาท</h5>
               <p class="card-text">
-                <a href="#" class="text-white" style="text-decoration: none;"> Comming soon</a>
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
               </p>
             </div>
           </div>
@@ -165,6 +165,8 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
       </div>
       </div>
           <!-- Zone Card show list -->
+ 
+       
 
 <br>
   <!-- ส่วน body ทั้งหมด -->
@@ -249,6 +251,5 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <script type="text/javascript" src="assets/jquery/jquery-slim.min.js"></script>
   <script type="text/javascript" src="assets/popper/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-  <?php mysqli_close($Connection);?>
 </body>
 </html>

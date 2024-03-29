@@ -27,6 +27,10 @@ require_once('connections/mysqli.php');
       max-width: 100%; /* ตรวจสอบว่ารูปภาพไม่ล้นคอนเทนเนอร์ */
       height: auto; /* อัตราส่วนภาพ */
     }
+    .card {
+    border: 1px solid #242424; /* ใส่เส้นกรอบสีขาว 1 พิกเซล */
+    border-radius: 8px; /* กำหนดรูปร่างมุมของกล่อง */
+    }
   </style>
 </head>
 <body class="default">
@@ -89,7 +93,74 @@ require_once('connections/mysqli.php');
     </button>
   </div><!-- /.carousel -->
 </div>
-
+<br>
+<!-- Zone Card show list -->
+<div class=container>
+    <div class="row">
+        <div class="col-6 col-sm-3">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="people-outline"></ion-icon>
+            สมาชิกทั้งหมด 
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 คน</h5>
+              <p class="card-text">
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+       <div class="col-6 col-sm-3">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="cart-outline"></ion-icon>
+            ผู้ใช้OCR-SCANทั้งหมด
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 ครั้ง</h5>
+              <p class="card-text">
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+       
+       <div class="col-6 col-sm-3">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="desktop-outline"></ion-icon>
+            รายการสินค้า 
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">จำนวน 0 รายการ</h5>
+              <p class="card-text">
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col-6 col-sm-3">
+          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+              <ion-icon name="cash-outline"></ion-icon>
+            ยอดขาย
+          </div>
+            <div class="card-body">
+              <h5 class="card-title"> 0  บาท</h5>
+              <p class="card-text">
+                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+          <!-- Zone Card show list -->
+ 
 
 <br>
   <!-- ส่วน body ทั้งหมด -->
@@ -133,8 +204,7 @@ require_once('connections/mysqli.php');
     <p class="lead">การใช้ระบบ OCR นั้นมีความสำคัญในการเพิ่มประสิทธิภาพในการประมวลผลข้อมูลและลดความผิดพลาดที่อาจเกิดขึ้นในกระบวนการป้อนข้อมูลด้วยมือโดยไม่จำเป็นต้องพิจารณาความซับซ้อนของการแปลงข้อมูลด้วยตนเอง ทั้งนี้ยังช่วยเพิ่มความสะดวกสบายและเร่งความเร็วในการเข้าถึงข้อมูลต่างๆ ด้วยลักษณะที่เป็นมิตรและสะดวกในการใช้งาน.</p>
   </div>
   <div class="col-md-5">
-    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+  <img src="assets/images/ocrbanner.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Placeholder: 500x500">
   </div>
 </div>
 
@@ -142,11 +212,14 @@ require_once('connections/mysqli.php');
 
 <div class="row featurette">
   <div class="col-md-7 order-md-2">
-    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+    <h2 class="featurette-heading">การแจ้งเตือนการรับประทานยา(LINE ALERT). <span class="text-white">ผ่านทางLINE.</span></h2>
+    <p class="lead">ด้วยความสะดวกสบายและความแม่นยำในการแจ้งเตือนการรับประทานยา ระบบนี้มีความเป็นประโยชน์ในการช่วยให้ผู้ใช้สามารถจัดการการรับประทานยาอย่างเป็นระเบียบและป้องกันการละเลยในการรับประทานยาที่สำคัญได้ในเวลาที่กำหนด.</p><br>
+    <p class="lead">ตั้งเวลาและประเภทของการแจ้งเตือน: ผู้ใช้สามารถตั้งเวลาและประเภทของการแจ้งเตือนการรับประทานยาได้ตามความเหมาะสม เช่น การตั้งเวลาเพื่อแจ้งเตือนการรับประทานยาในเช้าหรือเย็น และสามารถกำหนดจำนวนของยาที่ต้องรับประทานได้ในแต่ละครั้ง.</p>
+    <p class="lead">ส่งข้อความแจ้งเตือน: เมื่อถึงเวลาที่ตั้งไว้ในการแจ้งเตือน ระบบจะส่งข้อความแจ้งเตือนผ่านแอปพลิเคชัน LINE เพื่อแจ้งให้ผู้ใช้ทราบว่าถึงเวลาที่ต้องรับประทานยาแล้ว.</p>
+    <p class="lead">ระบบปลอดภัย: การแจ้งเตือนการรับประทานยาทาไลน์มักมีระบบความปลอดภัยที่มั่นคง เพื่อปกป้องข้อมูลส่วนตัวของผู้ใช้ และใช้การเข้ารหัสข้อมูลเพื่อป้องกันการเข้าถึงจากบุคคลที่ไม่ได้รับอนุญาต.</p>           
   </div>
   <div class="col-md-5 order-md-1">
-    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+  <img src="assets/images/linealert.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Placeholder: 500x500">
 
   </div>
 </div>
@@ -155,11 +228,11 @@ require_once('connections/mysqli.php');
 
 <div class="row featurette">
   <div class="col-md-7">
-    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-    <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+    <h2 class="featurette-heading">การเก็บฐานข้อมูลผู้ใช้ที่มี. <span class="text-white">ประสิทธิภาพ.</span></h2>
+    <p class="lead">ด้วยการเก็บฐานข้อมูลผู้ใช้ที่มีประสิทธิภาพ ธุรกิจสามารถเพิ่มประสิทธิภาพในการบริการและจัดการลูกค้าได้อย่างมีประสิทธิภาพและเป็นระบบ.</p>
   </div>
   <div class="col-md-5">
-    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+  <img src="assets/images/database.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Placeholder: 500x500">
 
   </div>
 </div>
