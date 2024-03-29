@@ -7,7 +7,7 @@ if ($_SESSION == NULL) {
     header("location:login.php");
     exit();
 }
-
+## กำหนด session ของhome page ##
 $check_submit = "";
 if (isset($_POST["submit"])) {
     $current_password = $_POST['current_password'];
