@@ -35,10 +35,10 @@ if (isset($_POST["submit"])) {
     <title>ระบบหลังบ้าน</title>
   </head>
   <body>
-    <?php include 'include/header.php'; ?>
+    <?php include 'component/header.php'; ?>
     <div class="container-fluid">
       <div class="row">
-        <?php include 'include/sidebarMenu.php'; ?>
+        <?php include 'component/sidebarMenu.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">แก้ไขข้อมูลผู้ใช้งาน</h1>
