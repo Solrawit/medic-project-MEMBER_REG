@@ -1,7 +1,7 @@
 <?php
 require_once('connections/mysqli.php');
 
-session_start();
+## session_start(); ##
 ?>
 <!DOCTYPE html>
 <html lang="en">

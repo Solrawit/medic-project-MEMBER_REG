@@ -1,7 +1,7 @@
 <?php
 require_once('../connections/mysqli.php');
 
-session_start();
+## session_start(); ##
 
 // ตรวจสอบว่ามี Session หรือไม่ ถ้าไม่มีให้เปลี่ยนเส้นทางไปที่หน้า login.php
 if (!isset($_SESSION["user_level"])) {
