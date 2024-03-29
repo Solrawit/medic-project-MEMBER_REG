@@ -31,6 +31,31 @@ require_once('connections/mysqli.php');
     border: 1px solid #242424; /* ใส่เส้นกรอบสีขาว 1 พิกเซล */
     border-radius: 8px; /* กำหนดรูปร่างมุมของกล่อง */
     }
+    .slider-title {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 90px; /* เว้นระยะห่างระหว่างรูปภาพและข้อความ */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: slideText 10s linear infinite;
+    }
+
+    .slider-title img {
+    max-width: 100px; /* ปรับขนาดของรูปภาพตามที่ต้องการ */
+    }
+
+    @keyframes slideText {
+    0% {
+    transform: translateX(100%);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+    }
+
   </style>
 </head>
 <body class="default">
@@ -42,6 +67,7 @@ require_once('connections/mysqli.php');
         </div>
 
     <!-- หัวประกาศ -->
+
 
   <br>
   <div class="container">
@@ -93,6 +119,23 @@ require_once('connections/mysqli.php');
     </button>
   </div><!-- /.carousel -->
 </div>
+<br>
+<!-- LOGO SLIDE BAR -->
+<div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
+
+<div class=container>
+    <div class="slider-title">
+  <img src="assets/images/css.png" alt="Your Image">
+  <img src="assets/images/fontawesome.png" alt="Your Image">
+  <img src="assets/images/html.png" alt="Your Image">
+  <img src="assets/images/js.png" alt="Your Image">
+  <img src="assets/images/mysql.png" alt="Your Image">
+  <img src="assets/images/linenotify.png" alt="Your Image">
+</div>
+</div>
+  </div>
+<!-- LOGO SLIDE BAR -->
+
 <br>
 <!-- Zone Card show list -->
 <div class=container>
