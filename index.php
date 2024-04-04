@@ -12,6 +12,8 @@ require_once('connections/mysqli.php');
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/medic.css">
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+  <!-- หรือ <link rel="stylesheet" href="assets/css/index.css"> -->
   <style>
     body {
       background-image: url('assets/images/bluewhite.jpg');
@@ -138,68 +140,57 @@ require_once('connections/mysqli.php');
 
 <br>
 <!-- Zone Card show list -->
-<div class=container>
-    <div class="row">
-        <div class="col-6 col-sm-3">
-          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              <ion-icon name="people-outline"></ion-icon>
-            สมาชิกทั้งหมด 
-          </div>
-            <div class="card-body">
-              <h5 class="card-title">จำนวน 0 คน</h5>
-              <p class="card-text">
-                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
-              </p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4">
+            <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <ion-icon name="people-outline"></ion-icon>
+                    สมาชิกทั้งหมด
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">จำนวน 0 คน</h5>
+                    <p class="card-text">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Comming soon</a>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    ผู้ใช้ OCR-SCAN ทั้งหมด
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">จำนวน 0 ครั้ง</h5>
+                    <p class="card-text">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Comming soon</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <ion-icon name="desktop-outline"></ion-icon>
+                    ผู้ใช้งานผ่านไลน์
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">จำนวน 0 คน</h5>
+                    <p class="card-text">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Comming soon</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
  
-       <div class="col-6 col-sm-3">
-          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              <ion-icon name="cart-outline"></ion-icon>
-            ผู้ใช้OCR-SCANทั้งหมด
-          </div>
-            <div class="card-body">
-              <h5 class="card-title">จำนวน 0 ครั้ง</h5>
-              <p class="card-text">
-                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
-              </p>
-            </div>
-          </div>
-        </div>
- 
-       
-       <div class="col-6 col-sm-3">
-          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              <ion-icon name="desktop-outline"></ion-icon>
-            รายการสินค้า 
-          </div>
-            <div class="card-body">
-              <h5 class="card-title">จำนวน 0 รายการ</h5>
-              <p class="card-text">
-                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
-              </p>
-            </div>
-          </div>
-        </div>
- 
-        <div class="col-6 col-sm-3">
-          <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
-            <div class="card-header">
-              <ion-icon name="cash-outline"></ion-icon>
-            ยอดขาย
-          </div>
-            <div class="card-body">
-              <h5 class="card-title"> 0  บาท</h5>
-              <p class="card-text">
-                <a href="#" class="text-dark" style="text-decoration: none;"> Comming soon</a>
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
       </div>
           <!-- Zone Card show list -->
