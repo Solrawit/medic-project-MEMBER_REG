@@ -122,6 +122,11 @@ require_once('connections/mysqli.php');
   </div><!-- /.carousel -->
 </div>
 <br>
+<div class=container>
+  <h2><center>MEDIC OCR PROJECT SUPPORT FOR WEBSIDE</center></h2>
+</div>
+
+<br>
 <!-- LOGO SLIDE BAR -->
 <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.2);">
 
@@ -137,6 +142,7 @@ require_once('connections/mysqli.php');
 </div>
   </div>
 <!-- LOGO SLIDE BAR -->
+
 
 <br>
 <!-- Zone Card show list -->
