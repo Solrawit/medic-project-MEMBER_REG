@@ -53,3 +53,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 });
+// ยังไม่ได้ใช้ OpenCV
