@@ -53,4 +53,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 });
+// ต้องสร้าง Text_photo.php ใหม่เป็น V2
 // ยังไม่ได้ใช้ OpenCV
