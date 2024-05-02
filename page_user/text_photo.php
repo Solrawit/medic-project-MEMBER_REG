@@ -21,6 +21,10 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/medic.css">
+  <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Photo To Text</title>

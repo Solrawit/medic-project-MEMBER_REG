@@ -22,6 +22,7 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  
   <style>
     body {
       background-image: url('assets/images/bluewhite.jpg');
