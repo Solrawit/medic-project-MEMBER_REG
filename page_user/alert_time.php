@@ -98,7 +98,7 @@ function sendLineNotification($token, $message) {
     return $response;
 }
 
-$token = 'H4TyaHhrXjmGmCWk72wqt0TDzpzbrhXr8Y8JYD1hBCq';
+$token = 'lxh5CZT47Ilqn5neFGGfd3jIWdLvJtNJXgwh9S8oEhP';
 $message = 'ถึงเวลาทานยาแล้ว! อย่าลืมรับประทานนะคะ';
 $response = sendLineNotification($token, $message);
 echo $response;

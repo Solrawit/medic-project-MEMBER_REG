@@ -22,9 +22,9 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/medic.css">
-  <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../assets/medic.css">
+    <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Photo To Text</title>
@@ -108,8 +108,51 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <br>
     <center><button type="button" class="btn btn-danger btn-lg" onclick="window.location.reload();">ยกเลิก</button></center>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">วิธีการใช้งาน</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <!-- เพิ่มข้อความวิธีการใช้งานที่นี่ -->
+        ทดสอบPopup model วิธีการใช้งาน
+      </div>
+
+      <!-- Modal footer -->
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">ปิด</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
 <script src="script.js"></script>
+
+<!-- js สำหรับ แสดง popup model -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    $('#myModal').modal('show');
+    
+    // ให้ปุ่ม "ปิด" ปิด Modal เมื่อคลิก
+    $('#myModal .close, #myModal .modal-footer button').click(function() {
+        $('#myModal').modal('hide');
+    });
+});
+</script>
+<!-- -------------------------- -->
+
 <?php include '../component/footer.php';?>
 </body>
 <?php mysqli_close($Connection);?>

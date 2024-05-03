@@ -37,3 +37,29 @@
 .card-text a:hover {
     text-decoration: none; /* การลบเส้นใต้ข้อความลิงก์เมื่อนำเมาส์ไปชี้ */
 }
+@keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .modal-content {
+    animation: slideIn 0.5s forwards;
+  }
+  
+  .modal.fade .modal-dialog {
+    animation: slideOut 0.5s forwards;
+  }
+  
