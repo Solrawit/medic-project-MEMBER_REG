@@ -1,86 +1,37 @@
 <?php
+// เชื่อมต่อกับ MySQL
 require_once('../connections/mysqli.php');
 
-## session_start(); ##
+// เริ่ม Session
+## session_start();
 
-if ($_SESSION == NULL) {
-  header("location:../login.php");
-  exit();
+// ตรวจสอบว่ามีการเข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบให้ Redirect ไปยังหน้า Login
+if (!isset($_SESSION['user_username'])) {
+    header("location:../login.php");
+    exit();
 }
 
-$strSQL = "SELECT * FROM mdpj_user WHERE user_username = '".$_SESSION['user_username']."'";
-$objQuery = mysqli_query($Connection,$strSQL);
-$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/medic.css">
-    <link rel="stylesheet" type="text/css" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/index.css">
-    <title>Set Alert Time</title>
-</head>
-<style type="text/css">
-         body {
-      background-image: url('../assets/images/bluewhite.jpg');
-      background-size: cover;
-      background-position: center;
-        }
-    .blurry-img {
-      filter: blur(10px); /* Adjust as needed */
-        }
-        body {
-            padding: 20px 100px;
-            font-family: 'Sarabun', sans-serif;
-        }
-        .upper div {
-            display: inline;
-            margin-left: 100px;
-            white-space: pre;
-        }
-        .bottom {
-            margin-top: 30px;
-            display: flex;
-        }
-        .bottom div {
-            flex: 1;
-            border: 1px solid rgb(118, 118, 118);
-            height: 400px;
-            margin: 10px;
-            border-radius: 10px;
-            padding: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        .bottom div img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-        }
-        .bottom div textarea {
-            resize: none;
-            width: calc(100% - 20px);
-            height: calc(100% - 20px);
-            padding: 10px;
-            font-size: 20px;
-            outline: none;
-            border: none;
-        }
-        .btn-container {
-            margin-top: 20px;
-        }
-    </style>
-<body>
-<?php include '../component/navbar_welcome.php';?>
-  <br>
-  <div class=container>
-    <h1>Set Alert Time Page....</h1>
-    <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
-    <?php
+// ตรวจสอบการส่งข้อมูลแบบ POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // รับค่าเวลาแจ้งเตือนจากฟอร์ม
+    $alert_time = $_POST['alert_time'];
+    $token = 'oFxy3zhUONQsRo0dFS4ykSbfZdIruosnVsAP2oTABFj'; // แทนด้วย Token ของคุณ
 
+    // คำสั่ง SQL เพื่อบันทึกเวลาแจ้งเตือนลงในฐานข้อมูล
+    $sql = "UPDATE mdpj_user SET alert_time = '$alert_time' WHERE user_username = '" . $_SESSION['user_username'] . "'";
+    
+    // ทำการ Query และตรวจสอบผลลัพธ์
+    if (mysqli_query($Connection, $sql)) {
+        echo "บันทึกเวลาแจ้งเตือนสำเร็จ";
+        
+        // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์
+        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time");
+    } else {
+        echo "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . mysqli_error($Connection);
+    }
+}
+
+// ฟังก์ชันสำหรับส่งข้อความไปยังไลน์
 function sendLineNotification($token, $message) {
     $url = 'https://notify-api.line.me/api/notify';
     $data = array('message' => $message);
@@ -97,15 +48,87 @@ function sendLineNotification($token, $message) {
 
     return $response;
 }
-
-$token = 'lxh5CZT47Ilqn5neFGGfd3jIWdLvJtNJXgwh9S8oEhP';
-$message = 'ถึงเวลาทานยาแล้ว! อย่าลืมรับประทานนะคะ';
-$response = sendLineNotification($token, $message);
-echo $response;
-
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Alert Time</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            padding: 20px 100px;
+            background-image: url('../assets/images/bluewhite.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="time"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <?php include '../component/navbar_welcome.php'; ?>
+    <br>
+    <div class="container">
+        <h1>Set Alert Time Page</h1>
+        <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="alert_time">Alert Time:</label>
+            <input type="time" id="alert_time" name="alert_time">
+            <button type="submit">Set Alert Time</button>
+        </form>
     </div>
-    <?php include '../component/footer.php';?>
+    <?php include '../component/footer.php'; ?>
 </body>
 </html>
