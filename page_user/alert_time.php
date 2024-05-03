@@ -80,5 +80,6 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
     <h1>Set Alert Time Page....</h1>
     <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
     </div>
+    <?php include '../component/footer.php';?>
 </body>
 </html>
