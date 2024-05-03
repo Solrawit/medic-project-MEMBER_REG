@@ -79,6 +79,32 @@ $objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
   <div class=container>
     <h1>Set Alert Time Page....</h1>
     <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
+    <?php
+
+function sendLineNotification($token, $message) {
+    $url = 'https://notify-api.line.me/api/notify';
+    $data = array('message' => $message);
+    $headers = array('Content-Type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
+}
+
+$token = 'H4TyaHhrXjmGmCWk72wqt0TDzpzbrhXr8Y8JYD1hBCq';
+$message = 'ถึงเวลาทานยาแล้ว! อย่าลืมรับประทานนะคะ';
+$response = sendLineNotification($token, $message);
+echo $response;
+
+?>
+
     </div>
     <?php include '../component/footer.php';?>
 </body>
