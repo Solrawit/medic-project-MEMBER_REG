@@ -1,0 +1,2 @@
+ALTER TABLE mdpj_user
+ADD COLUMN alert_time TIME DEFAULT NULL COMMENT 'เวลาแจ้งเตือน';
