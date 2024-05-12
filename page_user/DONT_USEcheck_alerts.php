@@ -2,7 +2,7 @@
 // เชื่อมต่อกับ MySQL
 require_once('../connections/mysqli.php');
 
-// เริ่ม Session
+// เริ่ม Sessionn
 session_start();
 
 // ตรวจสอบว่ามีการเข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบให้ Redirect ไปยังหน้า Login
