@@ -16,7 +16,7 @@ function sendLineNotification($token, $message, $image_path = null) {
     $url = 'https://notify-api.line.me/api/notify';
     $headers = array('Authorization: Bearer ' . $token);
     $data = array('message' => $message);
-    
+
     // ถ้ามีการส่งรูปภาพ
     if ($image_path) {
         $data['imageFile'] = new CURLFile($image_path);
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ป้องกัน SQL Injection โดยการใช้ Prepared Statements
     $stmt = $Connection->prepare("UPDATE mdpj_user SET alert_time = ? WHERE user_username = ?");
     $stmt->bind_param("ss", $alert_time, $_SESSION['user_username']);
-    
+
     // ทำการ Query และตรวจสอบผลลัพธ์
     if ($stmt->execute()) {
         $success_message = "บันทึกเวลาแจ้งเตือนสำเร็จ";
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error;
     }
     $stmt->close();
-    
+
     // ตรวจสอบและจัดการการอัปโหลดไฟล์
     $image_path = null;
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
