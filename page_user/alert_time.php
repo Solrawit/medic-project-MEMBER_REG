@@ -170,8 +170,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include '../component/navbar_welcome.php'; ?>
     <br>
     <div class="container">
-        <h1>Set Alert Time Page</h1>
-        <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
+        <h1>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</h1>
+        <p>Set Alert Time Page</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
             <label for="alert_time">Alert Time:</label>
             <input type="time" id="alert_time" name="alert_time">
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="image">Upload Image:</label>
             <input type="file" id="image" name="image">
             
-            <button type="submit">Set Alert Time</button>
+            <button type="submit">ตั้งค่าการแจ้งเตือน</button>
         </form>
         <?php if (isset($success_message)) : ?>
             <p class="message" style="color: green;"><?php echo $success_message; ?></p>
