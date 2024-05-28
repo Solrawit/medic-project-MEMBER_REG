@@ -173,13 +173,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</h1>
         <p>Set Alert Time Page</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-            <label for="alert_time">Alert Time:</label>
+            <label for="alert_time">ตั้งเวลาการแจ้งเตือน:</label>
             <input type="time" id="alert_time" name="alert_time">
             
-            <label for="image">Upload Image:</label>
+            <label for="image">อัปโหลดรูปภาพ:</label>
             <input type="file" id="image" name="image">
             
             <button type="submit">ตั้งค่าการแจ้งเตือน</button>
+            <br>
+            <p>กรุณากรอกข้อมูลด้านบนให้ครบถ้วน.</p>
         </form>
         <?php if (isset($success_message)) : ?>
             <p class="message" style="color: green;"><?php echo $success_message; ?></p>
