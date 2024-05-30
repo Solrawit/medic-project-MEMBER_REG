@@ -1,4 +1,3 @@
-
 <?php
 // เชื่อมต่อกับ MySQL
 require_once('../connections/mysqli.php');
@@ -17,7 +16,6 @@ function sendLineNotification($token, $message, $image_path = null) {
     $url = 'https://notify-api.line.me/api/notify';
     $headers = array('Authorization: Bearer ' . $token);
     $data = array('message' => $message);
-    
 
     // ถ้ามีการส่งรูปภาพ
     if ($image_path) {
@@ -45,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ป้องกัน SQL Injection โดยการใช้ Prepared Statements
     $stmt = $Connection->prepare("UPDATE mdpj_user SET alert_time = ? WHERE user_username = ?");
     $stmt->bind_param("ss", $alert_time, $_SESSION['user_username']);
-    
 
     // ทำการ Query และตรวจสอบผลลัพธ์
     if ($stmt->execute()) {
@@ -54,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error;
     }
     $stmt->close();
-    
 
     // ตรวจสอบและจัดการการอัปโหลดไฟล์
     $image_path = null;
@@ -86,8 +82,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $image_message = "ไม่มีไฟล์ถูกอัปโหลด";
     }
 
-    // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพ
-    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time", $image_path);
+    // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพหรือข้อความ
+    $user_username = $_SESSION['user_username']; // เพิ่มการรับค่า user_username
+    if ($image_path) {
+        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยผู้ใช้ : $user_username", $image_path);
+    } else {
+        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยผู้ใช้ : $user_username และไม่ได้อัปโหลดรูปภาพ");
+    }
 }
 ?>
 
@@ -201,3 +202,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include '../component/footer.php'; ?>
 </body>
 </html>
+
