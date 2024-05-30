@@ -11,6 +11,16 @@ if (!isset($_SESSION['user_username'])) {
     exit();
 }
 
+// ดึงชื่อและนามสกุลของผู้ใช้จากฐานข้อมูล
+$user_username = $_SESSION['user_username'];
+$query = "SELECT user_name, user_surname FROM mdpj_user WHERE user_username = ?";
+$stmt = $Connection->prepare($query);
+$stmt->bind_param("s", $user_username);
+$stmt->execute();
+$stmt->bind_result($user_name, $user_surname);
+$stmt->fetch();
+$stmt->close();
+
 // ฟังก์ชันสำหรับส่งข้อความไปยังไลน์
 function sendLineNotification($token, $message, $image_path = null) {
     $url = 'https://notify-api.line.me/api/notify';
@@ -19,7 +29,8 @@ function sendLineNotification($token, $message, $image_path = null) {
 
     // ถ้ามีการส่งรูปภาพ
     if ($image_path) {
-        $data['imageFile'] = new CURLFile($image_path);
+        $data['imageThumbnail'] = new CURLFile($image_path);
+        $data['imageFullsize'] = new CURLFile($image_path);
     }
 
     $ch = curl_init();
@@ -42,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ป้องกัน SQL Injection โดยการใช้ Prepared Statements
     $stmt = $Connection->prepare("UPDATE mdpj_user SET alert_time = ? WHERE user_username = ?");
-    $stmt->bind_param("ss", $alert_time, $_SESSION['user_username']);
+    $stmt->bind_param("ss", $alert_time, $user_username);
 
     // ทำการ Query และตรวจสอบผลลัพธ์
     if ($stmt->execute()) {
@@ -83,7 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพ
-    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time", $image_path);
+    $message = "ผู้ใช้ $user_name $user_surname ได้ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time";
+    sendLineNotification($token, $message, $image_path);
 }
 ?>
 
