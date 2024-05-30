@@ -1,3 +1,4 @@
+
 <?php
 // เชื่อมต่อกับ MySQL
 require_once('../connections/mysqli.php');
@@ -12,15 +13,15 @@ if (!isset($_SESSION['user_username'])) {
 }
 
 // ฟังก์ชันสำหรับส่งข้อความไปยังไลน์
-function sendLineNotification($token, $message, $image_url = null) {
+function sendLineNotification($token, $message, $image_path = null) {
     $url = 'https://notify-api.line.me/api/notify';
     $headers = array('Authorization: Bearer ' . $token);
     $data = array('message' => $message);
+    
 
-    // ถ้ามีการส่ง URL รูปภาพ
-    if ($image_url) {
-        $data['imageThumbnail'] = $image_url; // ใช้ URL ของรูปภาพเป็น imageThumbnail
-        $data['imageFullsize'] = $image_url; // ใช้ URL ของรูปภาพเป็น imageFullsize
+    // ถ้ามีการส่งรูปภาพ
+    if ($image_path) {
+        $data['imageFile'] = new CURLFile($image_path);
     }
 
     $ch = curl_init();
@@ -44,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ป้องกัน SQL Injection โดยการใช้ Prepared Statements
     $stmt = $Connection->prepare("UPDATE mdpj_user SET alert_time = ? WHERE user_username = ?");
     $stmt->bind_param("ss", $alert_time, $_SESSION['user_username']);
+    
 
     // ทำการ Query และตรวจสอบผลลัพธ์
     if ($stmt->execute()) {
@@ -52,9 +54,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error;
     }
     $stmt->close();
+    
+
+    // ตรวจสอบและจัดการการอัปโหลดไฟล์
+    $image_path = null;
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $target_dir = "../uploads/";
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // ตรวจสอบประเภทไฟล์
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            // ตรวจสอบว่าไฟล์มีอยู่หรือไม่
+            if (!file_exists($target_file)) {
+                // อัปโหลดไฟล์
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    $image_message = "ไฟล์ ". basename( $_FILES["image"]["name"]). " อัปโหลดสำเร็จ";
+                    $image_path = $target_file;
+                } else {
+                    $image_message = "ขออภัย, เกิดข้อผิดพลาดในการอัปโหลดไฟล์ของคุณ";
+                }
+            } else {
+                $image_message = "ขออภัย, ไฟล์นี้มีอยู่แล้ว";
+                $image_path = $target_file;
+            }
+        } else {
+            $image_message = "ขออภัย, ไฟล์ไม่ใช่รูปภาพ";
+        }
+    } else {
+        $image_message = "ไม่มีไฟล์ถูกอัปโหลด";
+    }
 
     // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพ
-    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time", null);
+    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time", $image_path);
 }
 ?>
 
@@ -101,7 +134,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-weight: bold;
         }
 
-        input[type="time"] {
+        input[type="time"],
+        input[type="file"] {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -140,15 +174,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include '../component/navbar_welcome.php'; ?>
     <br>
     <div class="container">
-        <h1>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</h1>
-        <p>Set Alert Time Page</p>
+        <h1>Set Alert Time Page</h1>
+        <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-            <label for="alert_time">ตั้งเวลาการแจ้งเตือน:</label>
+            <label for="alert_time">Alert Time:</label>
             <input type="time" id="alert_time" name="alert_time">
             
-            <button type="submit">ตั้งค่าการแจ้งเตือน</button>
-            <br>
-            <p>กรุณากรอกข้อมูลด้านบนให้ครบถ้วน</p>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image">
+            
+            <button type="submit">Set Alert Time</button>
         </form>
         <?php if (isset($success_message)) : ?>
             <p class="message" style="color: green;"><?php echo $success_message; ?></p>
@@ -156,19 +191,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (isset($error_message)) : ?>
             <p class="message" style="color: red;"><?php echo $error_message; ?></p>
         <?php endif; ?>
+        <?php if (isset($image_message)) : ?>
+            <p class="message" style="color: blue;"><?php echo $image_message; ?></p>
+        <?php endif; ?>
+        <?php if (isset($target_file) && file_exists($target_file)) : ?>
+            <img src="<?php echo htmlspecialchars($target_file); ?>" alt="Uploaded Image" class="uploaded-image">
+        <?php endif; ?>
     </div>
     <?php include '../component/footer.php'; ?>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        // ตรวจสอบว่ามีข้อความสำเร็จหรือไม่ แล้วแสดงข้อความแจ้งเตือน
-        <?php if (isset($success_message)) : ?>
-            swal("Success!", "<?php echo $success_message; ?>", "success");
-        <?php endif; ?>
-        // ตรวจสอบว่ามีข้อความผิดพลาดหรือไม่ แล้วแสดงข้อความแจ้งเตือน
-        <?php if (isset($error_message)) : ?>
-            swal("Error!", "<?php echo $error_message; ?>", "error");
-        <?php endif; ?>
-    </script>
 </body>
 </html>
-
