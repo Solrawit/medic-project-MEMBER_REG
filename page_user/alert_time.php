@@ -82,13 +82,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $image_message = "ไม่มีไฟล์ถูกอัปโหลด";
     }
 
-    // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพหรือข้อความ
-    $user_username = $_SESSION['user_username']; // เพิ่มการรับค่า user_username
-    if ($image_path) {
-        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยผู้ใช้ : $user_username", $image_path);
-    } else {
-        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยผู้ใช้ : $user_username และไม่ได้อัปโหลดรูปภาพ");
-    }
+    // ดึงข้อมูลชื่อและนามสกุลจากฐานข้อมูล
+$user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
+$query = "SELECT user_name, user_surname FROM mdpj_user WHERE user_username = ?";
+$stmt = $Connection->prepare($query);
+$stmt->bind_param("s", $user_username);
+$stmt->execute();
+$stmt->bind_result($user_name, $user_surname);
+$stmt->fetch();
+$stmt->close();
+
+// เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพหรือข้อความ
+$user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
+if ($image_path) {
+    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname", $image_path);
+} else {
+    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname และไม่ได้อัปโหลดรูปภาพ");
+}
+
+
 }
 ?>
 
