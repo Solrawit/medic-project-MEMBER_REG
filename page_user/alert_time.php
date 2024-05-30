@@ -3,7 +3,7 @@
 require_once('../connections/mysqli.php');
 
 // เริ่ม Session
-## session_start();
+session_start();
 
 // ตรวจสอบว่ามีการเข้าสู่ระบบหรือไม่ หากไม่ได้เข้าสู่ระบบให้ Redirect ไปยังหน้า Login
 if (!isset($_SESSION['user_username'])) {
@@ -58,8 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ทำการ Query และตรวจสอบผลลัพธ์
     if ($stmt->execute()) {
         $success_message = "บันทึกเวลาแจ้งเตือนสำเร็จ";
+        $alert_type = "success";
     } else {
         $error_message = "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error;
+        $alert_type = "error";
     }
     $stmt->close();
 
@@ -105,6 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Alert Time</title>
+    <!-- เพิ่ม SweetAlert CSS และ JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: 'Sarabun', sans-serif;
@@ -195,19 +200,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br>
             <p>กรุณากรอกข้อมูลด้านบนให้ครบถ้วน.</p>
         </form>
-        <?php if (isset($success_message)) : ?>
-            <p class="message" style="color: green;"><?php echo $success_message; ?></p>
-        <?php endif; ?>
-        <?php if (isset($error_message)) : ?>
-            <p class="message" style="color: red;"><?php echo $error_message; ?></p>
-        <?php endif; ?>
-        <?php if (isset($image_message)) : ?>
-            <p class="message" style="color: blue;"><?php echo $image_message; ?></p>
-        <?php endif; ?>
-        <?php if (isset($target_file) && file_exists($target_file)) : ?>
-            <img src="<?php echo htmlspecialchars($target_file); ?>" alt="Uploaded Image" class="uploaded-image">
-        <?php endif; ?>
     </div>
     <?php include '../component/footer.php'; ?>
+
+    <?php if (isset($success_message) || isset($error_message)) : ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: '<?php echo isset($success_message) ? "สำเร็จ!" : "เกิดข้อผิดพลาด!"; ?>',
+                text: '<?php echo isset($success_message) ? $success_message : $error_message; ?>',
+                icon: '<?php echo isset($success_message) ? "success" : "error"; ?>',
+                confirmButtonText: 'ตกลง'
+            });
+        });
+    </script>
+    <?php endif; ?>
+
+    <?php if (isset($image_message)) : ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'การอัปโหลดรูปภาพ',
+                text: '<?php echo $image_message; ?>',
+                icon: '<?php echo strpos($image_message, "อัปโหลดสำเร็จ") !== false ? "success" : "error"; ?>',
+                confirmButtonText: 'ตกลง'
+            });
+        });
+    </script>
+    <?php endif; ?>
 </body>
 </html>
