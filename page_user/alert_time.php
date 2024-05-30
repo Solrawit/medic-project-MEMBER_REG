@@ -83,24 +83,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // ดึงข้อมูลชื่อและนามสกุลจากฐานข้อมูล
-$user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
-$query = "SELECT user_name, user_surname FROM mdpj_user WHERE user_username = ?";
-$stmt = $Connection->prepare($query);
-$stmt->bind_param("s", $user_username);
-$stmt->execute();
-$stmt->bind_result($user_name, $user_surname);
-$stmt->fetch();
-$stmt->close();
+    $user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
+    $query = "SELECT user_name, user_surname FROM mdpj_user WHERE user_username = ?";
+    $stmt = $Connection->prepare($query);
+    $stmt->bind_param("s", $user_username);
+    $stmt->execute();
+    $stmt->bind_result($user_name, $user_surname);
+    $stmt->fetch();
+    $stmt->close();
 
-// เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพหรือข้อความ
-$user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
-if ($image_path) {
-    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname", $image_path);
-} else {
-    sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname และไม่ได้อัปโหลดรูปภาพ");
-}
-
-
+    // เรียกใช้ฟังก์ชันส่งข้อความไปยังไลน์พร้อมรูปภาพหรือข้อความ
+    $user_username = $_SESSION['user_username']; // อ้างอิง username จากเซสชัน
+    if ($image_path) {
+        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname", $image_path);
+    } else {
+        sendLineNotification($token, "ตั้งเวลาแจ้งเตือนเป็นเวลา $alert_time โดยคุณ : $user_name $user_surname และไม่ได้อัปโหลดรูปภาพ");
+    }
 }
 ?>
 
@@ -110,6 +108,7 @@ if ($image_path) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Alert Time</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
     <style>
         body {
             font-family: 'Sarabun', sans-serif;
@@ -189,7 +188,7 @@ if ($image_path) {
     <div class="container">
         <h1>Set Alert Time Page</h1>
         <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <form id="alertForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
             <label for="alert_time">Alert Time:</label>
             <input type="time" id="alert_time" name="alert_time">
             
@@ -212,6 +211,17 @@ if ($image_path) {
         <?php endif; ?>
     </div>
     <?php include '../component/footer.php'; ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+        <?php if(isset($success_message)) : ?>
+            swal("Success", "<?php echo $success_message; ?>", "success");
+        <?php endif; ?>
+        <?php if(isset($error_message)) : ?>
+            swal("Error", "<?php echo $error_message; ?>", "error");
+        <?php endif; ?>
+        <?php if(isset($image_message)) : ?>
+            swal("Info", "<?php echo $image_message; ?>", "info");
+        <?php endif; ?>
+    </script>
 </body>
 </html>
-
