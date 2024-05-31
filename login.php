@@ -66,7 +66,7 @@ if (isset($_POST["submit"])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            background-image: url('assets/images/bluewhite.jpg');
+            background-image: url('assets/images/bg4.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -87,7 +87,7 @@ if (isset($_POST["submit"])) {
     <div class="row justify-content-md-center">
         <div class="col-md-5">
             <div class="card border-info mt-2">
-                <h5 class="card-header">ระบบล็อคอิน</h5>
+                <h5 class="card-header">เข้าสู่ระบบ</h5>
                 <div class="card-body">
                     <div class="row justify-content-md-center mb-2">
                         <div class="col col-lg-6">
