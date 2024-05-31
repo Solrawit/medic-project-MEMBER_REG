@@ -61,6 +61,7 @@ if ($_SESSION != NULL) {
         <li class="nav-item">
           <a class="nav-link" href="index.php"><i class="fa fa-home fa-lg me-1"></i>หน้าหลัก</a>
         </li>
+        <a class="nav-link" href="logout.php"><i class="fa fa-home fa-lg me-1"></i>RESET</a>
  <!--       <a class="nav-link" href="logout.php"><i class="fa fa-home fa-lg me-1"></i>LOGOUT</a>  logout button  -->
         <!-- แทรกเมนูต่อจากนี้ได้ตามต้องการ -->
       </ul>
