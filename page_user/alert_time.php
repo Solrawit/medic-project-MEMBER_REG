@@ -109,6 +109,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Alert Time</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/medic.css">
+    <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <style>
         body {
             font-family: 'Sarabun', sans-serif;
@@ -118,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-position: center;
         }
 
-        .container {
+        .containers {
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             padding: 20px;
@@ -185,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php include '../component/navbar_welcome.php'; ?>
     <br>
-    <div class="container">
+    <div class="containers">
         <h1>Set Alert Time Page</h1>
         <p>หน้าสำหรับการตั้งค่าเวลาแจ้งเตือน</p>
         <form id="alertForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
