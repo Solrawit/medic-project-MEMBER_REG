@@ -63,7 +63,7 @@ if ($_SESSION != NULL) {
         </li>
         <a class="nav-link" href="logout.php"><i class="fa fa-home fa-lg me-1"></i>RESET</a>
  <!--       <a class="nav-link" href="logout.php"><i class="fa fa-home fa-lg me-1"></i>LOGOUT</a>  logout button  -->
-        <!-- แทรกเมนูต่อจากนี้ได้ตามต้องการ -->
+        <!-- แทรกเมนูต่อจากนี้ได้ตามต้องการ --->
       </ul>
       <?php if ($_SESSION == NULL) { ?>
         <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='login.php'">เข้าสู่ระบบ</button>
