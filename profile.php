@@ -1,7 +1,7 @@
 <?php
 require_once('connections/mysqli.php');
 
-## session_start(); ##
+## session_start(); ###
 
 if ($_SESSION == NULL) {
   header("location:login.php");
