@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const progress = document.querySelector('.progress');
     const textarea = document.querySelector('.bottom textarea');
 
-    // แสดงรูปที่อัปโหลด
+    // แสดงรูปที่อัปโหล
     fileSelector.onchange = () => {
         const file = fileSelector.files[0];
         const imgUrl = window.URL.createObjectURL(file);
