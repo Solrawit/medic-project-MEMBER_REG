@@ -103,7 +103,7 @@ if (isset($_SESSION['user_id'])) {
           <div class="container">
             <div class="carousel-caption text-end">
               <h1>แจ้งการทำงานผ่านไลน์</h1>
-              <p>แจ้งเตือนเวลาพร้อมรูปภาพผ่านแอพพลิเคชั่นผ่านไลน์</p>
+              <p>แจ้งเตือนเวลาพร้อมรูปภาพผ่านแอพพลิเคชั่นผ่านไลน์.</p>
               <p><a class="btn btn-lg btn-primary" href="#">ทดลองการใช้งาน</a></p>
             </div>
           </div>
