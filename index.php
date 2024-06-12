@@ -82,9 +82,9 @@ if (isset($_SESSION['user_id'])) {
           <img src="assets/images/banner2.png" class="rounded-image" alt="Image 1">
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Example headline.</h1>
-              <p>Some representative placeholder content for the first slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              <h1>ระบบใช้งานง่าย</h1>
+              <p>ระบบลองรับการแปรงจากรูปภาพเป็นข้อความ</p>
+              <p><a class="btn btn-lg btn-primary" href="#">ทดลองใช้งานฟรี</a></p>
             </div>
           </div>
         </div>
@@ -92,9 +92,9 @@ if (isset($_SESSION['user_id'])) {
           <img src="assets/images/banner2.png" class="rounded-image" alt="Image 2">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+              <h1>การเข้าสู่ระบบในไม่กี่คลิก</h1>
+              <p>การเข้าสู่ระบบลองรับทั้ง2ระบบ</p>
+              <p><a class="btn btn-lg btn-primary" href="#">สมัครสมาชิก</a></p>
             </div>
           </div>
         </div>
@@ -102,9 +102,9 @@ if (isset($_SESSION['user_id'])) {
           <img src="assets/images/banner2.png" class="rounded-image" alt="Image 3">
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              <h1>แจ้งการทำงานผ่านไลน์</h1>
+              <p>แจ้งเตือนเวลาพร้อมรูปภาพผ่านแอพพลิเคชั่นผ่านไลน์</p>
+              <p><a class="btn btn-lg btn-primary" href="#">ทดลองการใช้งาน</a></p>
             </div>
           </div>
         </div>
