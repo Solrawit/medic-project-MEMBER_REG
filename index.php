@@ -83,7 +83,7 @@ if (isset($_SESSION['user_id'])) {
           <div class="container">
             <div class="carousel-caption text-start">
               <h1>ระบบใช้งานง่าย</h1>
-              <p>ระบบลองรับการแปรงจากรูปภาพเป็นข้อความ</p>
+              <p>ระบบลองรับการแปรงจากรูปภาพเป็นข้อความ.</p>
               <p><a class="btn btn-lg btn-primary" href="#">ทดลองใช้งานฟรี</a></p>
             </div>
           </div>
@@ -93,7 +93,7 @@ if (isset($_SESSION['user_id'])) {
           <div class="container">
             <div class="carousel-caption">
               <h1>การเข้าสู่ระบบในไม่กี่คลิก</h1>
-              <p>การเข้าสู่ระบบลองรับทั้ง2ระบบ</p>
+              <p>การเข้าสู่ระบบลองรับทั้ง2ระบบ.</p>
               <p><a class="btn btn-lg btn-primary" href="#">สมัครสมาชิก</a></p>
             </div>
           </div>
